@@ -21,7 +21,7 @@ ENV['LEETCHI_PARTNER_ID'] = "myID"    # your Leetchi API ID
 
 ## Usage
 
-The gem implements the following ressources:
+The gem implements the following resources:
 - Beneficiary
 - Card
 - Contribution
@@ -30,7 +30,7 @@ The gem implements the following ressources:
 - Wallet
 - Withdrawal
 
-Each ressource has specifics methods such has `create`, `details`, `update`, etc. Those methods must be called with an ID and / or an Object matching the Leetchi API. Calling those methods return the Leetchi API response has an object. Every executions are made synchronously.
+Each resource has specifics methods such has `create`, `details`, `update`, etc. Those methods must be called with an ID and / or an Object matching the Leetchi API. Calling those methods return the Leetchi API response has an object. Every executions are made synchronously.
 
 ### Example
 
