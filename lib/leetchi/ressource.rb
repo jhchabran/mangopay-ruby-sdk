@@ -3,25 +3,25 @@ module Leetchi
 
   protected
 
-    def self.post_request route, data
+    def self.post_request(route, data)
       request('POST', route, data)
     end
 
-    def self.get_request route, options=nil
+    def self.get_request(route, options=nil)
       request('GET', route, nil, options)
     end
 
-    def self.put_request route, data
+    def self.put_request(route, data)
       request('PUT', route, data)
     end
 
-    def self.delete_request route
+    def self.delete_request(route)
       request('DELETE', route)
     end
 
   private
 
-    def self.request method, route, data=nil, options=nil
+    def self.request(method, route, data=nil, options=nil)
       path = path_for(route, options)
       uri = uri_for(path)
       method = method.upcase
@@ -42,7 +42,7 @@ module Leetchi
       begin
         JSON.parse(res.body)
       rescue JSON::ParserError => e
-        {'ErrorCode' => -1}
+        {' ErrorCode' => -1 }
       end
     end
 
@@ -50,24 +50,24 @@ module Leetchi
       OpenSSL::PKey::RSA.new(Base64::decode64(ENV['LEETCHI_KEY_BASE64'].gsub(/(\\n)/, "\n")), ENV['LEETCHI_PASSPHRASE'])
     end
 
-    def self.path_for route, options
+    def self.path_for(route, options)
       File.join('', 'v1', 'partner', ENV['LEETCHI_PARTNER_ID'], route.to_s) + "?ts=#{Time.now.to_i.to_s}" + (options.nil? ? '' : ('&' + options))
     end
 
-    def self.uri_for path
+    def self.uri_for(path)
       URI(File.join(API_BASE_URL, path))
     end
 
-    def self.sign data
+    def self.sign(data)
       Base64.encode64(key.sign('sha1', data)).to_s.chomp.gsub(/\n/, '')
     end
 
-    def self.signature_for method, path, data
+    def self.signature_for(method, path, data)
       sign("#{method}|#{path}|" + (data.nil? ? '' : "#{data}|"))
     end
 
-    def self.header_for method, path, data
-      {'X-Leetchi-Signature' => signature_for(method, path, data), 'Content-Type' => 'application/json'}
+    def self.header_for(method, path, data)
+      { 'X-Leetchi-Signature' => signature_for(method, path, data), 'Content-Type' => 'application/json' }
     end
 
   end
