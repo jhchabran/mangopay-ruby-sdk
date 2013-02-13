@@ -1,0 +1,24 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.3.2)
+    ansi (1.4.3)
+    crack (0.3.2)
+    json (1.7.6)
+    rake (10.0.3)
+    turn (0.9.6)
+      ansi
+    vcr (2.4.0)
+    webmock (1.9.0)
+      addressable (>= 2.2.7)
+      crack (>= 0.1.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  json
+  rake
+  turn
+  vcr
+  webmock

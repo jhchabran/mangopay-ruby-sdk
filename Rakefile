@@ -1,9 +1,8 @@
 require 'rake/testtask'
 
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/test_ressources.rb'
-  test.verbose = true
+Rake::TestTask.new do |t|
+  t.test_files = FileList['spec/lib/leetchi/*_spec.rb']
+  t.verbose = true
 end
 
 task :default => :test

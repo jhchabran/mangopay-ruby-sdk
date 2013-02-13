@@ -6,13 +6,13 @@ module Leetchi
   require 'net/http'
 
   require 'leetchi/ressource'
-  require 'leetchi/ressources/user'
-  require 'leetchi/ressources/wallet'
-  require 'leetchi/ressources/card'
-  require 'leetchi/ressources/contribution'
-  require 'leetchi/ressources/transfer'
-  require 'leetchi/ressources/beneficiary'
-  require 'leetchi/ressources/withdrawal'
+  require 'leetchi/user'
+  require 'leetchi/wallet'
+  require 'leetchi/card'
+  require 'leetchi/contribution'
+  require 'leetchi/transfer'
+  require 'leetchi/beneficiary'
+  require 'leetchi/withdrawal'
 
   API_BASE_URL = 'https://api-preprod.leetchi.com'
 
