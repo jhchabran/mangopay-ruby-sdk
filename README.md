@@ -51,3 +51,8 @@ This example returns a specific user's data:
 ```ruby
 Leetchi::User.details(123)
 ```
+
+### Tests
+Make sure that you have run: ```bundle install```
+Then you just have to run the rake task ```rake test``` to run all the test suite.
+Feel free to report any test failure to geoffroy@leetchi.com

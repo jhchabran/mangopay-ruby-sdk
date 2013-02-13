@@ -2,7 +2,6 @@ require_relative '../../spec_helper'
 
 describe Leetchi::Wallet do
 
-
     let(:new_user) {
         Leetchi::User.create({
             'Tag' => 'test',
@@ -47,18 +46,35 @@ describe Leetchi::Wallet do
     end
 
     describe "UPDATE" do
+        it "update the wallet" do
+            wallet = Leetchi::Wallet.update(new_wallet["ID"], {
+                'Name' => 'test_update',
+                'RaisingGoalAmount' => 5000
+                })
+            wallet['ID'].must_equal wallet['ID']
+            wallet['Name'].must_equal 'test_update'
+            wallet['RaisingGoalAmount'].must_equal 5000
+        end
     end
 
     describe "GET_OWNERS" do
-        it "get the wallet" do
+        it "get the wallet's owners" do
             wallet = Leetchi::Wallet.get_owners(new_wallet["ID"])
             wallet[0]['ID'].must_equal new_user['ID']
         end
     end
 
     describe "GET_CONTRIBUTORS" do
+        it "get the wallet's contributors" do
+            wallet = Leetchi::Wallet.get_contributors(new_wallet["ID"])
+            wallet[0]['ID'].must_equal new_user['ID']
+        end
     end
 
     describe "GET_REFUNDED" do
+        it "get the wallet's refunded" do
+            wallet = Leetchi::Wallet.get_refunded(new_wallet["ID"])
+            wallet[0]['ID'].must_equal new_user['ID']
+        end
     end
 end
