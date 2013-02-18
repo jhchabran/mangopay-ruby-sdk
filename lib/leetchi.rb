@@ -16,6 +16,7 @@ module Leetchi
   require 'leetchi/strong_authentication'
   require 'leetchi/operation'
   require 'leetchi/expense'
+  require 'leetchi/recurrent_contribution'
 
   API_BASE_URL = 'https://api-preprod.leetchi.com'
 
