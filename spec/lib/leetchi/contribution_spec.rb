@@ -30,6 +30,14 @@ describe Leetchi::Contribution do
             })
     }
 
+    let(:new_contribution_refund) {
+        Leetchi::Contribution.refund({
+            'ContributionID' => new_contribution['ID'],
+            'UserID' => new_user['ID'],
+            'Tag' => 'test_contribution_refund'
+            })
+    }
+
     describe "CREATE" do
         it "creates a contribution" do
             new_contribution['ID'].wont_be_nil
@@ -41,6 +49,16 @@ describe Leetchi::Contribution do
         it "get the contribution" do
             contribution = Leetchi::Contribution.details(new_contribution['ID'])
             contribution['ID'].must_equal new_contribution['ID']
+        end
+    end
+
+    describe "REFUND" do
+        it "creates a refund request for the contribution" do
+            new_contribution_refund['ID'].wont_be_nil
+        end
+        it "gets the refund request" do
+            contribution_refund = Leetchi::Contribution.get_refund(new_contribution_refund['ID'])
+            contribution_refund['ID'].must_equal new_contribution_refund['ID']
         end
     end
 end
