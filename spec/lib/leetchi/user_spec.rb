@@ -103,6 +103,7 @@ describe Leetchi::User do
                 })
             strong_authentication['ID'].must_equal new_strong_authentication['ID']
             strong_authentication['Tag'].must_equal 'test_strong_authentication2'
+            strong_authentication['IsDocumentsTransmitted'].must_equal true
         end
     end
 end
