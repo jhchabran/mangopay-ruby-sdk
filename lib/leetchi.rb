@@ -15,6 +15,7 @@ module Leetchi
   require 'leetchi/withdrawal'
   require 'leetchi/strong_authentication'
   require 'leetchi/operation'
+  require 'leetchi/expense'
 
   API_BASE_URL = 'https://api-preprod.leetchi.com'
 
