@@ -1,4 +1,4 @@
-require_relative '../lib/leetchi'
+require_relative '../lib/leetchi-wallet-services'
 
 require 'minitest/autorun'
 require 'webmock/minitest'
