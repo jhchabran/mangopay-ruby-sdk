@@ -35,7 +35,7 @@ The gem implements the following resources:
 - Wallet  
 - Withdrawal  
 
-Each resource has specifics methods such has `create`, `details`, `update`, etc. Those methods must be called with an ID and / or an Object matching the Leetchi API.  
+Each resource has specifics methods such has `create`, `details`, `update`, etc. Those methods must be called with an ID and / or an Object matching the Leetchi API.
 Calling those methods return the Leetchi API response has an object. Every executions are made synchronously.
 
 ### Example
@@ -62,3 +62,6 @@ Leetchi::User.details(123)
 Make sure that you have run: ```bundle install```  
 Then you just have to run the rake task ```rake test``` to run all the test suite.  
 Feel free to report any test failure by creating an issue on the [Gem's Github](https://github.com/Leetchi/leetchi-api-ruby-sdk/issues)
+
+## Code Status
+[![Build Status](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk.png?branch=master)](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk)
