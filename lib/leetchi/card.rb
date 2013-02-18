@@ -9,9 +9,8 @@ module Leetchi
       get_request(File.join('cards', card_id.to_s))
     end
 
-    def self.delete(card_id, data)
-      put_request(File.join('cards', card_id.to_s), data)
+    def self.delete(card_id)
+      delete_request(File.join('cards', card_id.to_s))
     end
-
   end
 end

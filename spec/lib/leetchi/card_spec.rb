@@ -41,9 +41,9 @@ describe Leetchi::Card do
     end
 
     describe "DELETE" do
-        it "delete the users card" do
+        it "delete the card" do
             deleted_card = Leetchi::Card.delete(new_card["ID"])
-            card = Leetchi::Card.details(deleted_card['ID'])
+            deleted_card.must_equal 'OK'
         end
     end
 
