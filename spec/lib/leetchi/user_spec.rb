@@ -12,6 +12,12 @@ describe Leetchi::User do
             })
     }
 
+    let(:new_strong_authentication) {
+        Leetchi::User.create_strong_authentication(new_user['ID'], {
+            'Tag' => 'test_strong_auth'
+            })
+    }
+
     before do
         VCR.insert_cassette 'user', :record => :new_episodes
     end
@@ -61,6 +67,42 @@ describe Leetchi::User do
         it "get an empty list of wallets" do
             wallets = Leetchi::User.get_wallets(new_user["ID"])
             wallets.must_be_empty
+        end
+    end
+
+    describe "CARDS" do
+        it "gets the user cards" do
+            cards = Leetchi::User.cards(new_user["ID"])
+            cards.must_be_empty
+        end
+    end
+
+    describe "OPERATIONS" do
+        it "gets all the users operations" do
+            operations = Leetchi::User.operations(new_user['ID'])
+            operations.must_be_empty
+        end
+        it "gets all the users personal operation" do
+            personal_operations = Leetchi::User.personal_operations(new_user['ID'])
+            personal_operations.must_be_empty
+        end
+    end
+
+    describe "STRONG_AUTHENTICATION" do
+        it "creates a new strong authentication request" do
+            new_strong_authentication['ID'].wont_be_nil
+        end
+        it "gets the user strong authentication request" do
+            strong_authentication = Leetchi::User.get_strong_authentication(new_user['ID'])
+            strong_authentication['ID'].must_equal new_strong_authentication['ID']
+        end
+        it "updates the user strong authentication request" do
+            strong_authentication = Leetchi::User.update_strong_authentication(new_user['ID'], {
+                    'Tag' => 'test_strong_authentication2',
+                    'IsDocumentsTransmitted' => true
+                })
+            strong_authentication['ID'].must_equal new_strong_authentication['ID']
+            strong_authentication['Tag'].must_equal 'test_strong_authentication2'
         end
     end
 end
