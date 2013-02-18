@@ -47,7 +47,7 @@ module Leetchi
     end
 
     def self.key
-      OpenSSL::PKey::RSA.new(Base64::decode64(ENV['LEETCHI_KEY_BASE64'].gsub(/(\\n)/, "\n")), ENV['LEETCHI_PASSPHRASE'])
+      OpenSSL::PKey::RSA.new(File.read(ENV['LEETCHI_KEY_PATH']), ENV['LEETCHI_PASSPHRASE'])
     end
 
     def self.path_for route, options
