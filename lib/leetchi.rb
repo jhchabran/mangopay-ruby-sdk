@@ -13,6 +13,7 @@ module Leetchi
   require 'leetchi/transfer'
   require 'leetchi/beneficiary'
   require 'leetchi/withdrawal'
+  require 'leetchi/strong_authentication'
 
   API_BASE_URL = 'https://api-preprod.leetchi.com'
 
