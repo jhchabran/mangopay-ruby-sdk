@@ -7,6 +7,7 @@ Tested on the following versions of Ruby: ruby 1.9.3p125
 
 ## Requirements
 
+This gem is running under ruby 1.9.2 and 1.9.3 versions.
 This gem uses mainly ruby stdlib and the *json* gem.
 
 ## Configuration
