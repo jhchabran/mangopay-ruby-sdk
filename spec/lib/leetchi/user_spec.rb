@@ -12,6 +12,14 @@ describe Leetchi::User do
             })
     }
 
+    let(:new_wallet) {
+        Leetchi::Wallet.create({
+            'Name' => 'test',
+            'Owners' => [ new_user['ID'] ],
+            'RaisingGoalAmount' => 12000
+            })
+    }
+
     let(:new_strong_authentication) {
         Leetchi::User.create_strong_authentication(new_user['ID'], {
             'Tag' => 'test_strong_auth'
@@ -68,6 +76,12 @@ describe Leetchi::User do
             wallets = Leetchi::User.get_wallets(new_user["ID"])
             wallets.must_be_empty
         end
+        it "gets a new wallet for the user" do
+            new_wallet
+            wallets = Leetchi::User.get_wallets(new_user['ID'])
+            wallets.wont_be_empty
+            wallets[0]["Owners"][0].must_equal new_user['ID']
+        end
     end
 
     describe "CARDS" do
@@ -105,5 +119,12 @@ describe Leetchi::User do
             strong_authentication['Tag'].must_equal 'test_strong_authentication2'
             strong_authentication['IsDocumentsTransmitted'].must_equal true
         end
+    end
+
+    describe "EXPENSE_SITES" do
+      it "get the expense sites for the given user" do
+        expense_sites = Leetchi::User.expense_sites(new_user['ID'], new_wallet['ID'])
+        expense_sites.must_be_kind_of Array
+      end
     end
 end

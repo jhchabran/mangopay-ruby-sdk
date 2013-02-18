@@ -40,5 +40,9 @@ module Leetchi
     def self.update_strong_authentication(user_id, data)
       put_request(File.join('users', user_id.to_s, 'strongAuthentication'), data)
     end
+
+    def self.expense_sites(user_id, wallet_id)
+      get_request(File.join('expense-sites'), "userID=#{user_id.to_s}&walletID=#{wallet_id.to_s}")
+    end
   end
 end
