@@ -55,7 +55,7 @@ module Leetchi
     end
 
     def self.uri_for(path)
-      URI(File.join(API_BASE_URL, path))
+      URI(File.join(ENV['LEETCHI_API_BASE_URL'], path))
     end
 
     def self.sign(data)

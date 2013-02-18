@@ -14,23 +14,29 @@ This gem uses mainly ruby stdlib and the *json* gem.
 Setup the following ENV:
 
 ```ruby
-ENV['LEETCHI_KEY_BASE64'] = "abcd"    # your Base64 encoded Leetchi API key
-ENV['LEETCHI_PASSPHRASE'] = "efgh"    # you key's passphrase (leave blank if none)
-ENV['LEETCHI_PARTNER_ID'] = "myID"    # your Leetchi API ID
+ENV['LEETCHI_API_BASE_URL'] = "https://api-preprod.leetchi.com" # once you've run your test using the preproduction environment use the production one
+ENV['LEETCHI_KEY_PATH'] = "abcd"                                # the full path to your leetchi key
+ENV['LEETCHI_PASSPHRASE'] = "efgh"                              # you key's passphrase (leave blank if none)
+ENV['LEETCHI_PARTNER_ID'] = "myID"                              # your Leetchi API ID
 ```
 
 ## Usage
 
-The gem implements the following resources:
-- Beneficiary
-- Card
-- Contribution
-- Transfer
-- User
-- Wallet
-- Withdrawal
+The gem implements the following resources:  
+- Beneficiary  
+- Card  
+- Contribution  
+- Expense  
+- Operation  
+- Recurrent Contribution (only available in preproduction)  
+- Strong Authentication  
+- Transfer  
+- User  
+- Wallet  
+- Withdrawal  
 
-Each resource has specifics methods such has `create`, `details`, `update`, etc. Those methods must be called with an ID and / or an Object matching the Leetchi API. Calling those methods return the Leetchi API response has an object. Every executions are made synchronously.
+Each resource has specifics methods such has `create`, `details`, `update`, etc. Those methods must be called with an ID and / or an Object matching the Leetchi API.  
+Calling those methods return the Leetchi API response has an object. Every executions are made synchronously.
 
 ### Example
 
@@ -53,6 +59,6 @@ Leetchi::User.details(123)
 ```
 
 ### Tests
-Make sure that you have run: ```bundle install```
-Then you just have to run the rake task ```rake test``` to run all the test suite.
-Feel free to report any test failure to geoffroy@leetchi.com
+Make sure that you have run: ```bundle install```  
+Then you just have to run the rake task ```rake test``` to run all the test suite.  
+Feel free to report any test failure by creating an issue on the [Gem's Github](https://github.com/Leetchi/leetchi-api-ruby-sdk/issues)
