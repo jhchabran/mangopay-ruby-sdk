@@ -3,7 +3,7 @@ module Leetchi
   class Withdrawal < Leetchi::Ressource
 
     # Create a withdrawal
-    # Only one amount can be present in the withdrawal request: either “AmountWithoutFees” or “Amount” (that is amount with fees).
+    # Only one amount can be present in the withdrawal request: either AmountWithoutFees or Amount (that is amount with fees).
     # Amount = AmountWithoutFees + ClientFeeAmount
     #
     # * *Args*    :
