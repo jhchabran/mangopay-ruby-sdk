@@ -3,11 +3,10 @@
 The gem for interacting with Leetchi API.
 See the [API documentation](http://doc.api.leetchi.com/) for more details on the API.
 
-Tested on the following versions of Ruby: ruby 1.9.3p125
+Tested on the following versions of Ruby: 1.9.2, 1.9.3
 
 ## Requirements
 
-This gem is running under ruby 1.9.2 and 1.9.3 versions.
 This gem uses mainly ruby stdlib and the *json* gem.
 
 ## Configuration
