@@ -77,4 +77,11 @@ describe Leetchi::Wallet do
             wallet[0]['ID'].must_equal new_user['ID']
         end
     end
+
+    describe "OPERATIONS" do
+        it "gets the wallet operations" do
+            operations = Leetchi::Wallet.operations(new_wallet['ID'])
+            operations.must_be_kind_of Array
+        end
+    end
 end

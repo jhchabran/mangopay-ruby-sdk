@@ -25,5 +25,8 @@ module Leetchi
       get_request(File.join('wallets', wallet_id.to_s, 'users'), 'refunded=1')
     end
 
+    def self.operations(wallet_id)
+      get_request(File.join('wallets', wallet_id.to_s, 'operations'))
+    end
   end
 end
