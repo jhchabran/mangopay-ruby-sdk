@@ -28,19 +28,23 @@ describe Leetchi::Card do
     end
 
     describe "CREATE" do
-        it "create a new card and return a rdirect url" do
+        it "create a new card and return a redirect url" do
             new_card['RedirectURL'].wont_be_empty
         end
     end
 
     describe "GET" do
-        it "get records the fixture" do
+        it "get the users card" do
             card = Leetchi::Card.details(new_card["ID"])
             card["ID"].must_equal new_card["ID"]
         end
     end
 
     describe "DELETE" do
+        it "delete the users card" do
+            deleted_card = Leetchi::Card.delete(new_card["ID"])
+            card = Leetchi::Card.details(deleted_card['ID'])
+        end
     end
 
 end
