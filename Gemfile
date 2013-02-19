@@ -1,11 +1,11 @@
 source :rubygems
 
-gem "json"
+gem 'json', '~> 1.7.7'
 
 group :test do
-    gem 'minitest'
-    gem 'webmock'
-    gem 'vcr'
-    gem 'turn'
-    gem 'rake'
+    gem 'minitest', '~> 4.6.1'
+    gem 'webmock', '~> 1.9.2'
+    gem 'vcr', '~> 2.4.0'
+    gem 'turn', '~> 0.9.6'
+    gem 'rake', '~> 10.0.3'
 end
