@@ -8,6 +8,7 @@ Tested on the following versions of Ruby: 1.9.2, 1.9.3
 ## Code Status
 [![Build Status](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk.png?branch=master)](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk)
 [![Code Climate](https://codeclimate.com/github/Leetchi/leetchi-api-ruby-sdk.png)](https://codeclimate.com/github/Leetchi/leetchi-api-ruby-sdk)
+[![Dependency Status](https://gemnasium.com/Leetchi/leetchi-api-ruby-sdk.png)](https://gemnasium.com/Leetchi/leetchi-api-ruby-sdk)
 
 ## Requirements
 
