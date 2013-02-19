@@ -5,6 +5,11 @@ See the [API documentation](http://doc.api.leetchi.com/) for more details on the
 
 Tested on the following versions of Ruby: 1.9.2, 1.9.3
 
+## Code Status
+[![Build Status](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk.png?branch=master)](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk)
+[![Code Climate](https://codeclimate.com/github/Leetchi/leetchi-api-ruby-sdk.png)](https://codeclimate.com/github/Leetchi/leetchi-api-ruby-sdk)
+[![Dependency Status](https://gemnasium.com/Leetchi/leetchi-api-ruby-sdk.png)](https://gemnasium.com/Leetchi/leetchi-api-ruby-sdk)
+
 ## Requirements
 
 This gem uses mainly ruby stdlib and the *json* gem.
@@ -63,5 +68,3 @@ Make sure that you have run: ```bundle install```
 Then you just have to run the rake task ```rake test``` to run all the test suite.  
 Feel free to report any test failure by creating an issue on the [Gem's Github](https://github.com/Leetchi/leetchi-api-ruby-sdk/issues)
 
-## Code Status
-[![Build Status](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk.png?branch=master)](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk)
