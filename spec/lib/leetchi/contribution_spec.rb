@@ -2,6 +2,8 @@ require_relative '../../spec_helper'
 
 describe Leetchi::Contribution do
 
+    include Capybara::DSL
+
     before do
         VCR.insert_cassette 'contribution', :record => :new_episodes
     end
@@ -19,8 +21,8 @@ describe Leetchi::Contribution do
             })
     }
 
-    let(:new_contribution) {
-        Leetchi::Contribution.create({
+    let(:new_contribution) do
+        contribution = Leetchi::Contribution.create({
             'Tag' => 'test_contribution',
             'UserID' => new_user['ID'],
             'WalletID' => 0,
@@ -28,7 +30,12 @@ describe Leetchi::Contribution do
             'ReturnURL' => 'https://leetchi.com',
             'BankAccountBIC' => 'AGRIFRPP879'
             })
-    }
+        visit(contribution['PaymentURL'])
+        fill_in('number', :with => '4970100000000154')
+        fill_in('cvv', :with => '123')
+        click_button('paybutton')
+        contribution
+    end
 
     let(:new_contribution_refund) {
         Leetchi::Contribution.refund({

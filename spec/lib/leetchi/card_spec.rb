@@ -2,6 +2,8 @@ require_relative '../../spec_helper'
 
 describe Leetchi::Card do
 
+    include Capybara::DSL
+
     let(:new_user) {
         Leetchi::User.create({
             'Tag' => 'test',
@@ -12,13 +14,19 @@ describe Leetchi::Card do
             })
     }
 
-    let(:new_card) {
-        Leetchi::Card.create({
+    let(:new_card) do
+        card = Leetchi::Card.create({
             'Tag' => 'test-card',
             'OwnerID' => new_user['ID'],
             'ReturnURL' => 'http://leetchi.com'
             })
-    }
+        visit(card['RedirectURL'])
+        fill_in('number', :with => '4970100000000154')
+        fill_in('cvv', :with => '123')
+        click_button('paybutton')
+        page.driver.render('/Users/glorieux/Desktop/file.png')
+        card
+    end
 
     before do
         VCR.insert_cassette 'card', :record => :new_episodes
@@ -43,7 +51,7 @@ describe Leetchi::Card do
     describe "DELETE" do
         it "delete the card" do
             deleted_card = Leetchi::Card.delete(new_card["ID"])
-            deleted_card.must_equal 'OK'
+            deleted_card.must_equal "\"OK\""
         end
     end
 
