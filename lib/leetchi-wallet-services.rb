@@ -20,11 +20,16 @@ module Leetchi
 
 
   class Configuration
-    attr_accessor :base_url, :partner_id, :key_path, :key_password
+    attr_accessor :base_url, :partner_id, :key_path, :key_password, :preproduction
 
-    def initialize
-      @base_url = "https://api-preprod.leetchi.com"
+    def preproduction
+      @preproduction || false
     end
+
+    def base_url
+      @base_url || (@preproduction == true  ? "https://api-preprod.leetchi.com" : "https://api.leetchi.com")
+    end
+
   end
 
   class << self

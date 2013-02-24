@@ -19,6 +19,7 @@ VCR.configure do |c|
 end
 
 Leetchi.configure do |c|
+    c.preproduction = true
     c.partner_id = 'example'
     c.key_path = './spec/support-files/example.pem'
     c.key_password = ''
