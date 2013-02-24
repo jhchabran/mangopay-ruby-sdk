@@ -18,4 +18,22 @@ module Leetchi
   require 'leetchi/expense'
   require 'leetchi/recurrent_contribution'
 
+
+  class Configuration
+    attr_accessor :base_url, :partner_id, :key_path, :key_password
+
+    def initialize
+      @base_url = "https://api-preprod.leetchi.com"
+    end
+  end
+
+  class << self
+    attr_accessor :configuration
+  end
+
+  def self.configure
+    self.configuration ||= Configuration.new
+    yield configuration
+  end
+
 end

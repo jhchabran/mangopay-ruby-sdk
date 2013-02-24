@@ -47,15 +47,15 @@ module Leetchi
     end
 
     def self.key
-      OpenSSL::PKey::RSA.new(File.read(ENV['LEETCHI_KEY_PATH']), ENV['LEETCHI_PASSPHRASE'])
+      OpenSSL::PKey::RSA.new(File.read(Leetchi.configuration.key_path), Leetchi.configuration.key_password)
     end
 
     def self.path_for(route, options)
-      File.join('', 'v1', 'partner', ENV['LEETCHI_PARTNER_ID'], route.to_s) + "?ts=#{Time.now.to_i.to_s}" + (options.nil? ? '' : ('&' + options))
+      File.join('', 'v1', 'partner', Leetchi.configuration.partner_id, route.to_s) + "?ts=#{Time.now.to_i.to_s}" + (options.nil? ? '' : ('&' + options))
     end
 
     def self.uri_for(path)
-      URI(File.join(ENV['LEETCHI_API_BASE_URL'], path))
+      URI(File.join(Leetchi.configuration.base_url, path))
     end
 
     def self.sign(data)
