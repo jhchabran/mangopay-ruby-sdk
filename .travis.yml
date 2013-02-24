@@ -1,9 +1,3 @@
-before_script:
-  - phantomjs --version
-  - pwd
-  - sudo /home/travis/build/Leetchi/leetchi-api-ruby-sdk/ci/install_phantomjs
-  - "export PATH=phantomjs/bin:$PATH"
-  - phantomjs --version
 rvm:
     - "1.9.2"
     - "1.9.3"
