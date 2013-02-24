@@ -11,14 +11,39 @@ This gem uses mainly ruby stdlib and the *json* gem.
 
 ## Configuration
 
+Please note that the gem configuration process change between 0.0.1 and 1.0.0.
+
+### Version 0.0.1
+
 Setup the following ENV:
 
-```ruby
+```
 ENV['LEETCHI_API_BASE_URL'] = "https://api-preprod.leetchi.com" # once you've run your test using the preproduction environment use the production one
 ENV['LEETCHI_KEY_PATH'] = "abcd"                                # the full path to your leetchi key
 ENV['LEETCHI_PASSPHRASE'] = "efgh"                              # you key's passphrase (leave blank if none)
 ENV['LEETCHI_PARTNER_ID'] = "myID"                              # your Leetchi API ID
 ```
+
+### Version 1.0.0
+
+You can now call the Leetchi.configure method like this:
+
+```ruby
+Leetchi.configure do |c|
+		c.preproduction = true
+    c.partner_id = 'example'
+    c.key_path = './spec/support-files/example.pem'
+    c.key_password = ''
+end
+```
+
+The **preproduction** attribute let you specify if you want to use the preproduction api endpoint.
+
+The **partner_id** is the id that was issue to you during you registration process.
+
+The **key_path** and **key_password** arguments are here to let you use the key you've created before the registration process.
+
+This configure method can of course be use to define a Ruby on Rails initialiser.
 
 ## Usage
 
