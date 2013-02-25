@@ -111,13 +111,14 @@ describe Leetchi::Beneficiary do
     describe "StrongAuthentication" do
       it "creates the beneficiary strong authentication request" do
         new_strong_authentication.wont_be_nil
+        new_strong_authentication['BeneficiaryID'].must_equal new_beneficiary['ID']
     end
     it "gets the beneficiary strong authentication request" do
-        strong_authentication = Leetchi::Beneficiary.get_strong_authentication(new_strong_authentication['ID'])
+        strong_authentication = Leetchi::Beneficiary.get_strong_authentication(new_strong_authentication['BeneficiaryID'])
         strong_authentication['ID'].must_equal new_strong_authentication['ID']
     end
     it "updated the beneficiary strong authentication request" do
-        strong_authentication = Leetchi::Beneficiary.update_strong_authentication(new_beneficiary['ID'], {
+        strong_authentication = Leetchi::Beneficiary.update_strong_authentication(new_strong_authentication['BeneficiaryID'], {
             'Tag' => 'test_beneficiary_strong_authentication2',
             'IsDocumentsTransmitted' => true
             })

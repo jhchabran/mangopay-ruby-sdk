@@ -107,15 +107,16 @@ describe Leetchi::User do
             new_strong_authentication['ID'].wont_be_nil
         end
         it "gets the user strong authentication request" do
-            strong_authentication = Leetchi::User.get_strong_authentication(new_user['ID'])
+            strong_authentication = Leetchi::User.get_strong_authentication(new_strong_authentication['UserID'])
             strong_authentication['ID'].must_equal new_strong_authentication['ID']
         end
         it "updates the user strong authentication request" do
-            strong_authentication = Leetchi::User.update_strong_authentication(new_user['ID'], {
+            strong_authentication = Leetchi::User.update_strong_authentication(new_strong_authentication['UserID'], {
                     'Tag' => 'test_strong_authentication2',
                     'IsDocumentsTransmitted' => true
                 })
             strong_authentication['ID'].must_equal new_strong_authentication['ID']
+            strong_authentication['UserID'].must_equal new_strong_authentication['UserID']
             strong_authentication['Tag'].must_equal 'test_strong_authentication2'
             strong_authentication['IsDocumentsTransmitted'].must_equal true
         end

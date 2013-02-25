@@ -2,6 +2,8 @@ require_relative '../../spec_helper'
 
 describe Leetchi::Withdrawal do
 
+    include Capybara::DSL
+
     before do
         VCR.insert_cassette 'withdrawal', :record => :new_episodes
     end
@@ -10,13 +12,26 @@ describe Leetchi::Withdrawal do
     end
 
     let(:new_user) {
-        Leetchi::User.create({
+        user = Leetchi::User.create({
             'Tag' => 'test',
             'Email' => 'my@email.com',
             'FirstName' => 'John',
             'LastName' => 'Doe',
             'CanRegisterMeanOfPayment' => true
             })
+        contribution = Leetchi::Contribution.create({
+            'Tag' => 'test_contribution',
+            'UserID' => user['ID'],
+            'WalletID' => 0,
+            'Amount' => 10000,
+            'ReturnURL' => 'https://leetchi.com',
+            'BankAccountBIC' => 'AGRIFRPP879'
+            })
+        visit(contribution['PaymentURL'])
+        fill_in('number', :with => '4970100000000154')
+        fill_in('cvv', :with => '123')
+        click_button('paybutton')
+        user
     }
 
     let(:new_beneficiary) {
@@ -51,7 +66,7 @@ describe Leetchi::Withdrawal do
                 'Tag' => 'test_withdrawal',
                 'UserID' => new_user['ID'],
                 'WalletID' => 0,
-                'Amount' => 250000000000000000,
+                'Amount' => -123,
                 'BeneficiaryID' => new_beneficiary['ID']
                 })
             fail_withdrawal['ErrorCode'].must_equal 2001
@@ -74,7 +89,7 @@ describe Leetchi::Withdrawal do
                 'WalletID' => 0,
                 'Amount' => 2500,
                 'BeneficiaryID' => new_beneficiary['ID'],
-                'ClientFeeAmount' => 3000
+                'ClientFeeAmount' => -3000
                 })
             fail_withdrawal['ErrorCode'].must_equal 2003
         end
