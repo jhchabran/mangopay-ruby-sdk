@@ -1,10 +1,10 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'json', '~> 1.7.7'
 
 group :test do
     gem 'minitest', '~> 4.6.1'
-    gem 'webmock', '~> 1.9.2'
+    gem 'webmock', '~> 1.9.3'
     gem 'capybara', '~> 2.0.2'
     gem 'poltergeist', '~> 1.1.0'
     gem 'vcr', '~> 2.4.0'
