@@ -3,7 +3,7 @@
 The gem for interacting with Leetchi API.
 See the [API documentation](http://doc.api.leetchi.com/) for more details on the API.
 
-Tested on the following versions of Ruby: 1.9.2, 1.9.3
+Tested on the following versions of Ruby: 1.9.2, 1.9.3, 2.0.0
 
 ## Code Status
 [![Build Status](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk.png?branch=master)](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk)
