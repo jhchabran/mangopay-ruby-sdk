@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://rubygems.org/gems/leetchi-wallet-services'
   s.required_ruby_version = '>= 1.9.2'
   s.add_dependency('json', '~> 1.7.7')
-  s.add_development_dependency('minitest', '~> 4.6.1')
+  s.add_development_dependency('minitest', '~> 4.6.2')
   s.add_development_dependency('webmock', '~> 1.9.3')
   s.add_development_dependency('capybara', '~> 2.0.2')
   s.add_development_dependency('poltergeist', '~> 1.1.0')
