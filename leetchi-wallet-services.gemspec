@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.2'
   s.add_dependency('json', '~> 1.7.7')
   s.add_development_dependency('minitest', '~> 4.6.2')
-  s.add_development_dependency('webmock', '~> 1.10.1')
+  s.add_development_dependency('webmock', '~> 1.11.0')
   s.add_development_dependency('capybara', '~> 2.0.2')
   s.add_development_dependency('poltergeist', '~> 1.1.0')
   s.add_development_dependency('vcr', '~> 2.4.0')
