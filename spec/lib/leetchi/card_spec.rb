@@ -24,7 +24,6 @@ describe Leetchi::Card do
         fill_in('number', :with => '4970100000000154')
         fill_in('cvv', :with => '123')
         click_button('paybutton')
-        page.driver.render('/Users/glorieux/Desktop/file.png')
         card
     end
 
