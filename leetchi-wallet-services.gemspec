@@ -17,11 +17,11 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://www.leetchi-api.com/'
   s.required_ruby_version = '>= 1.9.2'
   s.add_dependency('json', '~> 1.7.7')
-  s.add_development_dependency('minitest', '~> 4.6.2')
+  s.add_development_dependency('rake', '~> 10.0.3')
+  s.add_development_dependency('spork', '~> 0.9.2')
+  s.add_development_dependency('rspec', '~> 2.13.0')
+  s.add_development_dependency('vcr', '~> 2.4.0')
   s.add_development_dependency('webmock', '~> 1.11.0')
   s.add_development_dependency('capybara', '~> 2.0.2')
-  s.add_development_dependency('poltergeist', '~> 1.1.0')
-  s.add_development_dependency('vcr', '~> 2.4.0')
-  s.add_development_dependency('turn', '~> 0.9.6')
-  s.add_development_dependency('rake', '~> 10.0.3')
+  s.add_development_dependency('capybara-webkit', '~> 0.14.2')
  end

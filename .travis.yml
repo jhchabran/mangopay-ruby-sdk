@@ -1,4 +1,15 @@
+language: ruby
 rvm:
     - "1.9.2"
     - "1.9.3"
     - "2.0.0"
+notifications:
+  email: false
+script: xvfb-run rake
+env:
+  - QMAKE=/usr/bin/qmake
+  - QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+before_install:
+  - sudo apt-add-repository -y ppa:canonical-qt5-edgers/qt5-proper
+  - sudo apt-get update
+  - sudo apt-get install libqt5webkit5-dev qtdeclarative5-dev qtlocation5-dev qtsensors5-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev

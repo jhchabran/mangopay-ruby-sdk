@@ -41,7 +41,7 @@ module Leetchi
       end
       begin
         JSON.parse(res.body)
-      rescue JSON::ParserError => e
+      rescue JSON::ParserError
         res.body.is_a?(String) ? res.body : {' ErrorCode' => -1 }
       end
     end

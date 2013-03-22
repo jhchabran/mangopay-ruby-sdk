@@ -1,0 +1,691 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/users?ts=1363948912
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test","Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true}'
+    headers:
+      X-Leetchi-Signature:
+      - cy/L78OWeWtL7XNuvsDHSUmswlQwfcz8TSzR6uMHR4nzfBQM6B1BbmSLhqYMkQEVgqwTw7PbIYpmBmi0g3ZZJFWqJu1dF4rlycwENzu1/Ude9vCZkgYnyzBpdhjv871Fm1A0/z8Rutv2B9jawGa9TtNeO1oR8szoT6HNsFY94UsEbkDpJbMECK7/bHkwMi9UO5IZj/w3A9Zc6JZ+n0wf+LA23z6/647F21YdJ2yorT/i6GSovRocEwtwiOQgVERLQwQO8zZW31F+zgtfq/BcvOtDUgmd7RrDOSwoqfSi0FTGc4c43k0C6HOIk0kzKe3RbR1N+wBEaU1WaZlrxqllPw==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:41:51 GMT
+      Content-Length:
+      - '365'
+    body:
+      encoding: UTF-8
+      string: '{"Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true,"HasRegisteredMeansOfPayment":false,"IP":null,"Birthday":null,"Password":"KGUGjd1w0wHahgOPRHfQ2wkY5OHQVn","PersonalWalletAmount":0,"IsStrongAuthenticated":false,"Nationality":null,"PersonType":null,"ID":226578,"Tag":"test","CreationDate":1363948912,"UpdateDate":1363948912}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:41:53 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/contributions?ts=1363948913
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test_contribution","UserID":226578,"WalletID":0,"Amount":10000,"ReturnURL":"https://leetchi.com","BankAccountBIC":"AGRIFRPP879"}'
+    headers:
+      X-Leetchi-Signature:
+      - hPal1zKMZI0V8T/QW76vRpFbzmZD1u1+mOfHg6PQz5LibOnye20OFIEu6xDKbTBZWerPb5xH0ZwPf/DsyO3YHZ68xEIMdm8i6UximdiRxoMd6wFhm8WIThsEyjwPqCBjnq0OAdMHfRYKrjrHVP028tpx+ZdpD33kirz/NrVOi4PvCu0TI7iOxd59hGLcY1NkbxgW0IiCGOVOJvFXp3zhEVQ2Li3+tdeXKat71JNkWGUV7WB6WggU1E60h9feeclOe3eOZ5HooH2k6wjBYryKVPODKXT8BoGpZw7xPEF0ZAlZlj22jxBORvQMNv9pHLT+cmLxouGqPD4ajYcPHzvv1w==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:41:53 GMT
+      Content-Length:
+      - '601'
+    body:
+      encoding: UTF-8
+      string: '{"UserID":226578,"WalletID":0,"Amount":10000,"ClientFeeAmount":0,"LeetchiFeeAmount":0,"IsSucceeded":false,"IsCompleted":false,"PaymentURL":"https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=1gZEAA69APCFkBmlScNw1363948912728","TemplateURL":null,"ReturnURL":"https://leetchi.com/?ContributionID=226579","RegisterMeanOfPayment":false,"Error":null,"PaymentCardID":0,"Culture":"fr","Type":"Payline","PaymentMethodType":"cb_visa_mastercard","AnswerCode":null,"AnswerMessage":null,"ID":226579,"Tag":"test_contribution","CreationDate":1363948912,"UpdateDate":1363948913}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:41:53 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/users?ts=1363948913
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test","Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true}'
+    headers:
+      X-Leetchi-Signature:
+      - YwG+2gq3M3vI/8GXO2/r9qIMF58UV6hwR6wwPA2CJYatWhROxy6bl+rg3UuXCAdHcJuHVbpEewXO04eMVQqsRnLYCNHleUK3etUI/YjxzIcNvlfwzCrCWdShpEEOj6QnOQQylTfPYp+5zau5nQo0L5MbDtHhz3/zRlZDxfedrDArGbdpYWVcfbRCGZ8x8plSScBJDyZhzyiGEhT3V4cz7vND+Na/64BlXMcetFk4NrWbNQuiPFfDh7RgTyUfHZndj/0OWWIVNtKJUEeBena6oKb7oqcC1zo6PRN7pAuqGWsd/E0DuiXeBUXzPCmZYkvmbW+6WrkSH9Ui+FKLicaQ/w==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:41:53 GMT
+      Content-Length:
+      - '365'
+    body:
+      encoding: UTF-8
+      string: '{"Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true,"HasRegisteredMeansOfPayment":false,"IP":null,"Birthday":null,"Password":"gLLV7jqCNNQ2kE1JKdnxWCoumnw6LG","PersonalWalletAmount":0,"IsStrongAuthenticated":false,"Nationality":null,"PersonType":null,"ID":226580,"Tag":"test","CreationDate":1363948913,"UpdateDate":1363948913}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:41:54 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/contributions?ts=1363948914
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test_contribution","UserID":226580,"WalletID":0,"Amount":10000,"ReturnURL":"https://leetchi.com","BankAccountBIC":"AGRIFRPP879"}'
+    headers:
+      X-Leetchi-Signature:
+      - hUiz6PpxfMnUl8x0xrEz9e0an+gKpihu/vnVs5xCXRnLkWGr6R2B9ykQhpdjVYouw6Ww+a1etzieQb10/mDGlG4uUsZ0Jq9dG5xLGZy1ACg+wZ3j19rb720onN9NXHSJvKavXowqeZCn1gBNrsiW78FfiJBcz6b31Uq7mzzU5WHcjRURIRKPl34362M5+XymDr5al9wTMLyBBUdZfmIIHSEEgTByFGVtYHbNPkPDF/i0yqm7xiFjZcwrzp/jvJJ5YiFGWBDQ6GJ3NzxRruqoXGsmYqxdmM2Ely4Rvso6fBH3dl5Y1dO+Fmy+u2ZmUdEpUEWKYM96NNtAfNtKHqDpmg==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:41:54 GMT
+      Content-Length:
+      - '601'
+    body:
+      encoding: UTF-8
+      string: '{"UserID":226580,"WalletID":0,"Amount":10000,"ClientFeeAmount":0,"LeetchiFeeAmount":0,"IsSucceeded":false,"IsCompleted":false,"PaymentURL":"https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=1EtBFYuWUqKvsh5BcRXJ1363948913912","TemplateURL":null,"ReturnURL":"https://leetchi.com/?ContributionID=226581","RegisterMeanOfPayment":false,"Error":null,"PaymentCardID":0,"Culture":"fr","Type":"Payline","PaymentMethodType":"cb_visa_mastercard","AnswerCode":null,"AnswerMessage":null,"ID":226581,"Tag":"test_contribution","CreationDate":1363948914,"UpdateDate":1363948914}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:41:55 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/users?ts=1363948915
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test","Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true}'
+    headers:
+      X-Leetchi-Signature:
+      - MI0UD3eQ67PolRO2HI6/4XeLSE0t84Mp1OpuAyH47rEDN5EnnIN3B4XerVibWqk2ffl15ITdmerKQV+T06l0Zotahhy33ljfH3aYbbXtRXUqnBiYFuHLvfZ1tErgNS3sa6pR9NmQbE1+rHB68LDjVgXcpqgjT2OYczN+gyV4G149K1nC9llunhjn0q+s489YpkiBfJPHsq2TV+tg3cg5AE2LQbPMuvcP/tRlt6ULXnWgTszUrdAc2wTsnXiPMb6CfSzZQBQHerXYtW9TOu2JaIHnsN96X0/7k5jqXBuuDHmc0p5fLgdJp9WtOMd/c+VcFH+frI1+uti+Fpzpm+tY3w==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:41:54 GMT
+      Content-Length:
+      - '365'
+    body:
+      encoding: UTF-8
+      string: '{"Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true,"HasRegisteredMeansOfPayment":false,"IP":null,"Birthday":null,"Password":"FkLOq7AxiDyo5D9akQ7wdEDxAOwrJU","PersonalWalletAmount":0,"IsStrongAuthenticated":false,"Nationality":null,"PersonType":null,"ID":226582,"Tag":"test","CreationDate":1363948915,"UpdateDate":1363948915}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:41:55 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/contributions?ts=1363948915
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test_contribution","UserID":226582,"WalletID":0,"Amount":10000,"ReturnURL":"https://leetchi.com","BankAccountBIC":"AGRIFRPP879"}'
+    headers:
+      X-Leetchi-Signature:
+      - TxZWrnBorYnMgL4xLkipqaWE/sVawGKenrm8qGSjTccfsyxrokVwnO2RvhEbY/CFpZmcNXX6lYMY6OE9AVbDomx2mG/J0PUsv2D94q2VY1meH+vXJfAilfZG7CEyIR3M9jYTV36D3PKx7rS19QY5prOARJwZa8rBI+FcDJ09sm3g03fe9cgl3TXllJLZLB8G6OqFCww/9j610G/NtbDXUHSuf0o5UVVCzI9ryXpJGGCWsWy02rStJ+68ai6hRrp2phZJXB9NhEP2icivsCoE5qXZbgavW2HtIjNf6oG1Q8dSYuJvdZ6BKT11SKR5S9uMmkr5fMrrAJ8m+BvrGqLx5A==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:41:55 GMT
+      Content-Length:
+      - '601'
+    body:
+      encoding: UTF-8
+      string: '{"UserID":226582,"WalletID":0,"Amount":10000,"ClientFeeAmount":0,"LeetchiFeeAmount":0,"IsSucceeded":false,"IsCompleted":false,"PaymentURL":"https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=1WR9o99RFUfJtUaHZ8EU1363948915443","TemplateURL":null,"ReturnURL":"https://leetchi.com/?ContributionID=226583","RegisterMeanOfPayment":false,"Error":null,"PaymentCardID":0,"Culture":"fr","Type":"Payline","PaymentMethodType":"cb_visa_mastercard","AnswerCode":null,"AnswerMessage":null,"ID":226583,"Tag":"test_contribution","CreationDate":1363948915,"UpdateDate":1363948915}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:41:56 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/users?ts=1363948916
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test","Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true}'
+    headers:
+      X-Leetchi-Signature:
+      - APu+gNEkhfsxps+6uO950ugCysDjVG1oEg76qmh6QzHl3+THbvuTg/zvN/tIggv0fHUBy8qK+rNutKhUQgMxTUBpg55yTJoOC6KA/xLvG5hJS5/7hE47rdEv5xU16Q8o3XOyGWRoxDSqNi8ZsA9Y7uY7HsnWFrPzeu4n96885mv8TnoiLsjueL9YYPdsIvX+WWXD9p+dD92ISXfzcP7WkMos+5KrccpPL0cN5eVgsShtA09CbWffzcFl+KUXPx5kClHUxRJ7/+qkrPu9VfV8/8XNRpm8cnQqaf9A7FxMhd0AHqC0vwOVbOI8Sol8V6iRrSfDnwcsQV9iw02gcUIMYA==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:41:55 GMT
+      Content-Length:
+      - '365'
+    body:
+      encoding: UTF-8
+      string: '{"Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true,"HasRegisteredMeansOfPayment":false,"IP":null,"Birthday":null,"Password":"Xu2fhFrHo4in4T8JGVumcQ9pDaSnoM","PersonalWalletAmount":0,"IsStrongAuthenticated":false,"Nationality":null,"PersonType":null,"ID":226584,"Tag":"test","CreationDate":1363948916,"UpdateDate":1363948916}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:41:57 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/contributions?ts=1363948917
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test_contribution","UserID":226584,"WalletID":0,"Amount":10000,"ReturnURL":"https://leetchi.com","BankAccountBIC":"AGRIFRPP879"}'
+    headers:
+      X-Leetchi-Signature:
+      - MVgnsrhwuuz9aG2Fi1NJEqfyuBmBd6Cfg88aEyCqw4gMme/3+DxptJ4Iwn5pK7Knc4N8bVn5nUpj2GoWFjk1ZZfzr5gGUG8SNWkB4IFIPoOIYrl6VNqOMF9mKUj/bAhs/93+heQHvnS9eWLAWVVmqKvCUA67yz2EHegqbeGq8HYONPmQlZ7Me422qsAJnWj17WsUrqT/YxJskoYDBibx66O52SGjHjgA+fBsPrCwVwKJ0Bl2l3RfaDODiZVhNG7RImYTcoQY8Q2NtwrRY0zBY0Cxe8VcLN1I3zXxdJoGIRiAsAvkmCkJ/Ao6qtUx75LxsVO/1wjmH1Ty3/x15Q0I2w==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:41:57 GMT
+      Content-Length:
+      - '601'
+    body:
+      encoding: UTF-8
+      string: '{"UserID":226584,"WalletID":0,"Amount":10000,"ClientFeeAmount":0,"LeetchiFeeAmount":0,"IsSucceeded":false,"IsCompleted":false,"PaymentURL":"https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=1mnfNvs5e76uc9FGelrb1363948916891","TemplateURL":null,"ReturnURL":"https://leetchi.com/?ContributionID=226585","RegisterMeanOfPayment":false,"Error":null,"PaymentCardID":0,"Culture":"fr","Type":"Payline","PaymentMethodType":"cb_visa_mastercard","AnswerCode":null,"AnswerMessage":null,"ID":226585,"Tag":"test_contribution","CreationDate":1363948916,"UpdateDate":1363948917}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:41:58 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/users?ts=1363949144
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test","Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true}'
+    headers:
+      X-Leetchi-Signature:
+      - T+HOxE6AMhJkJhFmiMrR4wR8JA/85PmcoufPs4yEvhn7Nh5IFXCvYUT2Zw3nHwwND/ZMOFuAVBZMVAT6Uzv71SWzgfP6mnnLfJhaGTTj8K145RR7ARddjTPvL77uMssxpgYZaE3luCj0PW9FsPkCRQ1CWPc4Xceiw02RjAkdJOw5Wa+YgeQS3PGmFUBEJdAbtWEqDTsceG09zBmS8u9OVlgWZO4/5Ic59opgA8q+xtdyGQO7sx0xBPhIuRSCIgiYpD4fRwhHvqBNAw23yWFd/XiybDry7OMtnln/OJAeUBpcL/JXqoPzBc00gS7JaOA9ic9ZZSGakexKMs7HJhEXew==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:45:44 GMT
+      Content-Length:
+      - '365'
+    body:
+      encoding: UTF-8
+      string: '{"Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true,"HasRegisteredMeansOfPayment":false,"IP":null,"Birthday":null,"Password":"AU2pwPVMbVMrV7RuAcpxHCUVMwAMqr","PersonalWalletAmount":0,"IsStrongAuthenticated":false,"Nationality":null,"PersonType":null,"ID":226659,"Tag":"test","CreationDate":1363949144,"UpdateDate":1363949144}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:45:45 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/contributions?ts=1363949145
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test_contribution","UserID":226659,"WalletID":0,"Amount":10000,"ReturnURL":"https://leetchi.com","BankAccountBIC":"AGRIFRPP879"}'
+    headers:
+      X-Leetchi-Signature:
+      - EdwP0+1tvwUvRWfiLNZYNYUneUVpMG1AhUZ+xdfAEbJ4mj/Gq2vEspdS5jPtubq5po9r1GPf+BewvcxxfMijmwvmD+k9GC5C4+SOOktXpGpzUC/Ma1AQPyk2PQuA+QJasdKh0mkHgAV4IMQieyDzoc8FBUzDG4gm4jmRRs388nXyXzqLbuA1RuGlHH2zbkYyXtF57MgAq3f+8jZ/vezdcYb5MXQhmHx6TjZU5c63rGfTb48OeG93t8NBdmrflQbz6+atmAR6O/4ZQHzKiD7zo03COa2trJUcw18xoRclR3zZMTj5HrZWIDPCzmaHjr8klHsba4fpJ0J0OLy0KRgJhw==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:45:44 GMT
+      Content-Length:
+      - '601'
+    body:
+      encoding: UTF-8
+      string: '{"UserID":226659,"WalletID":0,"Amount":10000,"ClientFeeAmount":0,"LeetchiFeeAmount":0,"IsSucceeded":false,"IsCompleted":false,"PaymentURL":"https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=1bUiLGZFD2JlJN239UZD1363949145134","TemplateURL":null,"ReturnURL":"https://leetchi.com/?ContributionID=226660","RegisterMeanOfPayment":false,"Error":null,"PaymentCardID":0,"Culture":"fr","Type":"Payline","PaymentMethodType":"cb_visa_mastercard","AnswerCode":null,"AnswerMessage":null,"ID":226660,"Tag":"test_contribution","CreationDate":1363949145,"UpdateDate":1363949145}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:45:46 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/users?ts=1363949146
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test","Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true}'
+    headers:
+      X-Leetchi-Signature:
+      - O0gTUxiaDdV3uVI/ElnLj7SQWwuTS78n2AJ1IdO8XOIxKkQURIdkPtO4p7yEhwsDcvGUXDHVo7Pty6Muhde4SQVCJzjo/aHRyxCdY5WxP2uUCSWRa+xL8QcTIbqFcNyjfJBFDYzK6g28jAuo0wFhUcWTcKMbSteHTaLDREtqwPUHslftlSf1oU7Ucz5wkld80/DRCkT7e+ktqQ2TYruxoL8QuB7/EGcaHXs+6IE8Wy/pEdGBcTpZtz1gWIkr5jskY1lVAa0X2Zm3EkIvnfC+8xSKU2GMUqxU/8QllOMT1RC0Xu61RateRQBSvKML+KV2b1ORdnE7N8EUYkGCUGLMlA==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:45:46 GMT
+      Content-Length:
+      - '365'
+    body:
+      encoding: UTF-8
+      string: '{"Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true,"HasRegisteredMeansOfPayment":false,"IP":null,"Birthday":null,"Password":"pOdQF7fk3Ww6w8whz9GGCYNwA7agOa","PersonalWalletAmount":0,"IsStrongAuthenticated":false,"Nationality":null,"PersonType":null,"ID":226661,"Tag":"test","CreationDate":1363949146,"UpdateDate":1363949146}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:45:47 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/contributions?ts=1363949147
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test_contribution","UserID":226661,"WalletID":0,"Amount":10000,"ReturnURL":"https://leetchi.com","BankAccountBIC":"AGRIFRPP879"}'
+    headers:
+      X-Leetchi-Signature:
+      - Ia35vn/aKfP7r/nnpPhyv6xEUHajGK/USVmV5SmjOj1Zgfq9GyypPpBBqa96fx4Y9V+jb2KUJ4Ct/HezcD3tivyzB6jhK9hE4CpfEY3QW0ieXV2loinqCwGa8cC/pzvKygFWLa5X5ytKGn+GZFLf3nEDnKRpemlKyr0isS9/8fcxW5Api2B5CMgLwc5fzY+zUZNUuRy3SoVTHmy8u+XLzhQM6/7vPruxyFXXGSfI2x4C6PZNZYJ8nCR8N6mdxURmfyOYoaxTSTICK5RZrcEvl3RXyEowZnUO+6zJG2MOtao9ebvMCLghj85f/aWZlxUqAwUAy3Rv2dlmEi7vAsTPXg==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:45:46 GMT
+      Content-Length:
+      - '601'
+    body:
+      encoding: UTF-8
+      string: '{"UserID":226661,"WalletID":0,"Amount":10000,"ClientFeeAmount":0,"LeetchiFeeAmount":0,"IsSucceeded":false,"IsCompleted":false,"PaymentURL":"https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=1ntFXYycoMNADxRHIdWe1363949146947","TemplateURL":null,"ReturnURL":"https://leetchi.com/?ContributionID=226662","RegisterMeanOfPayment":false,"Error":null,"PaymentCardID":0,"Culture":"fr","Type":"Payline","PaymentMethodType":"cb_visa_mastercard","AnswerCode":null,"AnswerMessage":null,"ID":226662,"Tag":"test_contribution","CreationDate":1363949146,"UpdateDate":1363949147}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:45:48 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/users?ts=1363949148
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test","Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true}'
+    headers:
+      X-Leetchi-Signature:
+      - Fpn3tyGYk/DjS97as4AB2xeglhHhGMynY+d86R0D9uoWqmgl5uyH6I9xCKhKB7pgNA9g94b6ymzyaphJSsh8zig8RB9QBF/JUjIqCsoD32lNqPAqjgkWkLoG/vI9Fz2oNDbGaSyIB7pc1szyBSRbe5wxJNQYXnTY8Op0HYhh7XmqCeA6IgUAyRAoNt7fSU9FsLSML8OAKS9ISXBpDq0P5VkgYsNRHcD5SouLPnL7m6gMNLps3GhSDwe/bMQdB8WZwFYabWz2WjpkWVhGHdDyrfVabYQmSSfYxYbbBbrQn3cVSXB19cNSNnaCkiMy4UO0JtcT92kTey4sS6k7U2wyTg==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:45:47 GMT
+      Content-Length:
+      - '365'
+    body:
+      encoding: UTF-8
+      string: '{"Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true,"HasRegisteredMeansOfPayment":false,"IP":null,"Birthday":null,"Password":"pivVF8nfBTopiDaLgWzD6AeUYBaRqH","PersonalWalletAmount":0,"IsStrongAuthenticated":false,"Nationality":null,"PersonType":null,"ID":226663,"Tag":"test","CreationDate":1363949147,"UpdateDate":1363949147}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:45:48 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/contributions?ts=1363949148
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test_contribution","UserID":226663,"WalletID":0,"Amount":10000,"ReturnURL":"https://leetchi.com","BankAccountBIC":"AGRIFRPP879"}'
+    headers:
+      X-Leetchi-Signature:
+      - YvVQ2L7KdOzypCvQ5DH0J1ZHAKQigaj+o+AiCIeCp6doGkdgu9rFwNmmXck41Ro3CaAxvPyDd7XlJzMoCLHWu9PUGAmxgaBn1bcjhv6PntxU1uV9ZsBOfAxHLFvzAYyvyV50yaq0LSkZ9cgHz10GOlHzqMvwamgq5OK/2xUNn6N9GKQRBFCjRE8hsQpu+QsT7M7DR3kzX1/WPMdei3bhN6GUZJGICx7cr/FDvPDqGKXEyHdu0hj6IUgWukCDMlMQq4FN+7LxcT1Gcn5DhHm7CW88rW6BJ6KMYz09fPEdhNcWfjfB0q7qQQOL7Nn8rfnLm122RcjW5/lAHSPUpa47yA==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:45:47 GMT
+      Content-Length:
+      - '601'
+    body:
+      encoding: UTF-8
+      string: '{"UserID":226663,"WalletID":0,"Amount":10000,"ClientFeeAmount":0,"LeetchiFeeAmount":0,"IsSucceeded":false,"IsCompleted":false,"PaymentURL":"https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=163HEo8DdWSfBVUE6hq61363949148357","TemplateURL":null,"ReturnURL":"https://leetchi.com/?ContributionID=226664","RegisterMeanOfPayment":false,"Error":null,"PaymentCardID":0,"Culture":"fr","Type":"Payline","PaymentMethodType":"cb_visa_mastercard","AnswerCode":null,"AnswerMessage":null,"ID":226664,"Tag":"test_contribution","CreationDate":1363949148,"UpdateDate":1363949148}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:45:49 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/users?ts=1363949149
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test","Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true}'
+    headers:
+      X-Leetchi-Signature:
+      - dJB25w91WhBUlThRfdyI9MehyvUE39c1m4z0GgKWWHC/GJDtf+ocpE8x7jCSdxPYIyvQO6tIu0dyOUEV7XqkW73MPyfJYxN3IGc0nWwRZv5jnq4N7o8zVm3lXY+OfilnVWCDh9zqW9gQB/UDbhjMQ0HQNlfkvrlHgb0yfgIUIsuibdLq2ZwLXZp+hdxNsBALB+j4EX9PPqqNN1PY7sYAANkSYnzCvO2MHMTSNpZyqNW7nKvWepv+BfaaVBUekJ8sEFHfMrtDLNdIwUirVUoUo5ZvJ2q0V46CphWO4kPgsSySxlG0ZvegkG+p8UimCTITTn9WWkWEIqzm2c5mR5CH6Q==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:45:49 GMT
+      Content-Length:
+      - '365'
+    body:
+      encoding: UTF-8
+      string: '{"Email":"my@email.com","FirstName":"John","LastName":"Doe","CanRegisterMeanOfPayment":true,"HasRegisteredMeansOfPayment":false,"IP":null,"Birthday":null,"Password":"78G3GnMMCx5uJYsoPjvZ1pSjdZeM6e","PersonalWalletAmount":0,"IsStrongAuthenticated":false,"Nationality":null,"PersonType":null,"ID":226665,"Tag":"test","CreationDate":1363949149,"UpdateDate":1363949149}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:45:50 GMT
+- request:
+    method: post
+    uri: https://api-preprod.leetchi.com/v1/partner/example/contributions?ts=1363949150
+    body:
+      encoding: UTF-8
+      string: '{"Tag":"test_contribution","UserID":226665,"WalletID":0,"Amount":10000,"ReturnURL":"https://leetchi.com","BankAccountBIC":"AGRIFRPP879"}'
+    headers:
+      X-Leetchi-Signature:
+      - H3pGMWdurwx6dZbUEDDB6rZZfUK4f06/dxGhR4ocPo7H/cXDNRanyORNpVEbUzRNx0T7GWQlYH+M+ml4Z+Sgw7TKc2RrOOue+mGp+Kt8DmbfXqxFjIrKybHqZewiTGni/tZzfYPEiltRpsadflAu9y3k9xjLh7oEkvr03B8SW5Ab94BvbmGSC1lUeuXPppNjXt4bLPXzYIxet8mBZDc4Dn6PafKVauRRfIyYR4bz0CS55z8ildW40aJ6WV1jpSj9dtOW/6kMQbmsGfq+5Bqfmmsd1dVPbHzegYlF7c+I5RlG8Q75/60L2a6A05RBv3HO0RiN0ecC6grk56/++qXCkQ==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:45:49 GMT
+      Content-Length:
+      - '601'
+    body:
+      encoding: UTF-8
+      string: '{"UserID":226665,"WalletID":0,"Amount":10000,"ClientFeeAmount":0,"LeetchiFeeAmount":0,"IsSucceeded":false,"IsCompleted":false,"PaymentURL":"https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=1mzS2k5e8f6GEI0yPmAC1363949149751","TemplateURL":null,"ReturnURL":"https://leetchi.com/?ContributionID=226666","RegisterMeanOfPayment":false,"Error":null,"PaymentCardID":0,"Culture":"fr","Type":"Payline","PaymentMethodType":"cb_visa_mastercard","AnswerCode":null,"AnswerMessage":null,"ID":226666,"Tag":"test_contribution","CreationDate":1363949149,"UpdateDate":1363949150}'
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:45:50 GMT
+recorded_with: VCR 2.4.0

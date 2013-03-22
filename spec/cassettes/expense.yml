@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-preprod.leetchi.com/v1/partner/example/expenses/1?ts=1363948918
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Leetchi-Signature:
+      - BcYvrtrmog8szt+agdOlVbj8gcLm7hvzNZIINBMJ4V527l9CqmHAKIGOBjAeQMzMv9tenqhJK1PS2VjuLgwqnO7pczmGlsjZ+u+apXD+4Yv0mWa56wd/8PWC6c0gJ274/8i8bc+vomzbVvToEleYB2PsdjUGORfKcwIwE258nDVG7h9X0hClhcpfoQOqkEPXtLdutCrKQMxFxLPUhkvoJywkp7ubUH3IxtLQm7zR1unxDN5Uqc89/P+UvMSk3Bkojx1SDtrzQLWe6YnNJtvUyrkSPGNC6dirpprCIAao3LvYiozFbXQsBkVVRAvomchgqltZbzi881oVevzLfMFeYQ==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:41:57 GMT
+      Content-Length:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:41:58 GMT
+- request:
+    method: get
+    uri: https://api-preprod.leetchi.com/v1/partner/example/expenses/1?ts=1363949151
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Leetchi-Signature:
+      - p/mCRr369FTZPgoGqEa+EMaIS3aauRxbsx5mRP4/uPoDQCBX52V/JcNFJAtUoM0EbolnY1FqI4KJ+y7H1MwmFPiVMPF3L0E3PC5dGM2V+tm/MQZIWaY94KIA2tRZ75mGeRwO8xCNc/X4m+JKpdk4umgfO9gLr6SV/8IPutVakPm6a/YHF42RL3gZ/wdUgSsWEF52kZPpNJXPkJfWZiJqhTVEsCDQF/DFLBB3ZzlmX9olrrenNuhgl6dL8CSL2IJNdwPkfzdAJ0WpUxo7MPvQjD/P95Nw0qWjQJWL06emT+60MzMFyjK8o/pCbgOVehZ4RvVF+LPEnJmSif58rb8rPQ==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnetmvc-Version:
+      - '2.0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 22 Mar 2013 10:45:50 GMT
+      Content-Length:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 22 Mar 2013 10:45:51 GMT
+recorded_with: VCR 2.4.0
