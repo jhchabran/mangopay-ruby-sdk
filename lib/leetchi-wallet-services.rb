@@ -4,6 +4,7 @@ module Leetchi
   require 'base64'
   require 'openssl'
   require 'net/http'
+  require 'net/http/post/multipart'
 
   require 'leetchi/ressource'
   require 'leetchi/user'

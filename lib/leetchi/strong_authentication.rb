@@ -11,5 +11,18 @@ module Leetchi
         def self.get
             get_request(File.join('strongAuthentication'))
         end
+
+        # Upload your Strong Authentication required files using the Leetchi API
+        #
+        # * *Args*    :
+        #   - +upload_url+ -> The url to where the StrongAuthentication documents need to be uploaded
+        #   - +file_path+ -> Local path to the file
+        # * *Returns* :
+        #   - true if the request is done
+        #   - false if the request failed
+        #
+        def self.upload(upload_url, file_path)
+            form_request(upload_url, "StrongValidationDto.Picture", file_path)
+        end
     end
 end
