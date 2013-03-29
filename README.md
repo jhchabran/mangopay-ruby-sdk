@@ -1,7 +1,7 @@
 # leetchi-api-ruby-sdk
 
 The gem for interacting with Leetchi API.
-See the [API documentation](http://doc.api.leetchi.com/) for more details on the API.
+See the [API documentation](http://www.leetchi-api.com/get-started/) for more details on the API.
 
 Tested on the following versions of Ruby: 1.9.2, 1.9.3, 2.0.0
 
