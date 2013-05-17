@@ -1,7 +1,7 @@
 # leetchi-api-ruby-sdk
 
 The gem for interacting with Leetchi API.
-See the [API documentation](http://www.leetchi-api.com/get-started/) for more details on the API.
+See the [API documentation](http://www.mangopay.com/api-references/) for more details on the API.
 
 Tested on the following versions of Ruby: 1.9.2, 1.9.3, 2.0.0
 
@@ -35,7 +35,7 @@ You can now call the Leetchi.configure method like this:
 
 ```ruby
 Leetchi.configure do |c|
-		c.preproduction = true
+    c.preproduction = true
     c.partner_id = 'example'
     c.key_path = './spec/support-files/example.pem'
     c.key_password = ''
