@@ -2,19 +2,19 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name        = 'leetchi-wallet-services'
-  s.version     = '1.0.0'
+  s.version     = '1.1.0'
   s.summary     = "Gem for interacting with the Leetchi Wallet Services"
   s.description = <<-EOF
-  The Leetchi API Gem makes interacting with Leetchi's Wallet Services much easier.
-  For any questions regarding the use of Leetchi's Wallet Services feel free to contact us at http://www.leetchi-api.com/contact-us/
-  You can find more documentation about Leetchi's Wallet Services at http://www.leetchi-api.com/
+  The Leetchi API Gem makes interacting with MangoPay Services much easier.
+  For any questions regarding the use of Leetchi's Wallet Services feel free to contact us at http://www.mangopay.com/contact-us/
+  You can find more documentation about MangoPay Services at http://www.mangopay.com/
   EOF
   s.authors     = ['Geoffroy Lorieux', 'Vincent Cogne']
   s.email       = 'it-support@leetchi.com'
   s.files       = FileList['lib/**/*.rb',
                            '[A-Z]*',
                            'spec/**/*'].to_a
-  s.homepage    = 'http://www.leetchi-api.com/'
+  s.homepage    = 'http://www.mangopay.com/'
   s.required_ruby_version = '>= 1.9.2'
   s.add_dependency('json', '~> 1.7.7')
   s.add_dependency('multipart-post', '~> 1.2.0')
