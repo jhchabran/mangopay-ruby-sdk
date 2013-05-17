@@ -30,7 +30,6 @@ module Leetchi
     def base_url
       @base_url || (@preproduction == true  ? "https://api-preprod.leetchi.com" : "https://api.leetchi.com")
     end
-
   end
 
   class << self
@@ -41,5 +40,4 @@ module Leetchi
     self.configuration ||= Configuration.new
     yield configuration
   end
-
 end

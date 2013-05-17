@@ -38,4 +38,18 @@ describe Leetchi::RecurrentContribution do
         end
     end
 
+    describe "UPDATE" do
+        it "updates a recurrent contribution" do
+            recurrent_contribution = Leetchi::RecurrentContribution.udpate(new_recurrent_contribution["ID"], { :IsEnabled => false })
+            expect(recurrent_contribution["IsEnabled"]).to be_false
+        end
+    end
+
+    describe "GET_EXECUTIONS" do
+        it "get a list of the recurrent contribution executions" do
+            recurrent_contribution_executions = Leetchi::RecurrentContribution.get_executions(new_recurrent_contribution["ID"])
+            expect(recurrent_contribution_executions).to be_a_kind_of(Array)
+            expect(recurrent_contribution_executions).not_to be_empty
+        end
+    end
 end

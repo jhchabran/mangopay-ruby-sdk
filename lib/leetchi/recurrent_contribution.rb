@@ -34,5 +34,29 @@ module Leetchi
     def self.get(recurrent_contributions_id)
       get_request(File.join('recurrent-contributions', recurrent_contributions_id.to_s))
     end
+
+    # Update a recurrent contribution
+    #
+    # * *Args*    :
+    #   - +data+ -> A JSON with the following attributes (Square brackets for optionals):
+    #               * IsEnabled
+    #               * [Tag]
+    # * *Returns* :
+    #   - A recurrent contribution object
+    #
+    def self.update(recurrent_contributions_id, data)
+      put_request(File.join('recurrent-contributions', recurrent_contributions_id), data)
+    end
+
+    # Fetch the list of a recurrent contribution executions
+    #
+    # * *Args*    :
+    #   - +recurrent_contributions_id+ -> The id of the recurrent contribution you want to retrieve operations from
+    # * *Returns* :
+    #   - An array of payment execution
+    #
+    def self.get_executions(recurrent_contributions_id)
+      get_request(File.join('recurrent-contributions', recurrent_contributions_id, 'executions'))
+    end
   end
 end
