@@ -103,22 +103,22 @@ describe Leetchi::Beneficiary do
     end
 
     describe "StrongAuthentication" do
-      it "creates the beneficiary strong authentication request" do
-        expect(new_strong_authentication).not_to be_nil
-        expect(new_strong_authentication['BeneficiaryID']).to eq(new_beneficiary['ID'])
+        it "creates the beneficiary strong authentication request" do
+            expect(new_strong_authentication).not_to be_nil
+            expect(new_strong_authentication['BeneficiaryID']).to eq(new_beneficiary['ID'])
+        end
+        it "gets the beneficiary strong authentication request" do
+            strong_authentication = Leetchi::Beneficiary.get_strong_authentication(new_strong_authentication['BeneficiaryID'])
+            expect(strong_authentication['ID']).to eq(new_strong_authentication['ID'])
+        end
+        it "updated the beneficiary strong authentication request" do
+            strong_authentication = Leetchi::Beneficiary.update_strong_authentication(new_strong_authentication['BeneficiaryID'], {
+                'Tag' => 'test_beneficiary_strong_authentication2',
+                'IsDocumentsTransmitted' => true
+                })
+            expect(strong_authentication['ID']).to eq(new_strong_authentication['ID'])
+            expect(strong_authentication['Tag']).to eq('test_beneficiary_strong_authentication2')
+            expect(strong_authentication['IsDocumentsTransmitted']).to be_true
+        end
     end
-    it "gets the beneficiary strong authentication request" do
-        strong_authentication = Leetchi::Beneficiary.get_strong_authentication(new_strong_authentication['BeneficiaryID'])
-        expect(strong_authentication['ID']).to eq(new_strong_authentication['ID'])
-    end
-    it "updated the beneficiary strong authentication request" do
-        strong_authentication = Leetchi::Beneficiary.update_strong_authentication(new_strong_authentication['BeneficiaryID'], {
-            'Tag' => 'test_beneficiary_strong_authentication2',
-            'IsDocumentsTransmitted' => true
-            })
-        expect(strong_authentication['ID']).to eq(new_strong_authentication['ID'])
-        expect(strong_authentication['Tag']).to eq('test_beneficiary_strong_authentication2')
-        expect(strong_authentication['IsDocumentsTransmitted']).to be_true
-    end
-end
 end
