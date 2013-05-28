@@ -40,7 +40,7 @@ describe Leetchi::RecurrentContribution do
 
     describe "UPDATE" do
         it "updates a recurrent contribution" do
-            recurrent_contribution = Leetchi::RecurrentContribution.udpate(new_recurrent_contribution["ID"], { :IsEnabled => false })
+            recurrent_contribution = Leetchi::RecurrentContribution.update(new_recurrent_contribution["ID"], { :IsEnabled => false })
             expect(recurrent_contribution["IsEnabled"]).to be_false
         end
     end
