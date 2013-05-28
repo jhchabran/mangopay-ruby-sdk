@@ -45,7 +45,7 @@ module Leetchi
     #   - A recurrent contribution object
     #
     def self.update(recurrent_contributions_id, data)
-      put_request(File.join('recurrent-contributions', recurrent_contributions_id), data)
+      put_request(File.join('recurrent-contributions', recurrent_contributions_id.to_s), data)
     end
 
     # Fetch the list of a recurrent contribution executions
@@ -56,7 +56,7 @@ module Leetchi
     #   - An array of payment execution
     #
     def self.get_executions(recurrent_contributions_id)
-      get_request(File.join('recurrent-contributions', recurrent_contributions_id, 'executions'))
+      get_request(File.join('recurrent-contributions', recurrent_contributions_id.to_s, 'executions'))
     end
   end
 end
