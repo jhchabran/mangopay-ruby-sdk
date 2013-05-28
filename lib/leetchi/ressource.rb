@@ -1,7 +1,7 @@
 module Leetchi
   class Ressource
 
-  protected
+    protected
 
     def self.post_request(route, data)
       request('POST', route, data)
@@ -19,7 +19,18 @@ module Leetchi
       request('DELETE', route)
     end
 
-  private
+    def self.form_request(upload_url, file_name, file_path)
+      url = URI(upload_url)
+      File.open(file_path) do |file|
+        req = Net::HTTP::Post::Multipart.new(url, :file => UploadIO.new(file_path, file_type(file_path)), :name => file_name)
+        res = Net::HTTP.start(url.host, url.port, :use_ssl => url.scheme == 'https') do |http|
+          http.request(req)
+        end
+        res.code == "200" ? true : false
+      end
+    end
+
+    private
 
     def self.request(method, route, data=nil, options=nil)
       path = path_for(route, options)
@@ -41,7 +52,7 @@ module Leetchi
       end
       begin
         JSON.parse(res.body)
-      rescue JSON::ParserError => e
+      rescue JSON::ParserError
         res.body.is_a?(String) ? res.body : {' ErrorCode' => -1 }
       end
     end
@@ -70,6 +81,16 @@ module Leetchi
       { 'X-Leetchi-Signature' => signature_for(method, path, data), 'Content-Type' => 'application/json' }
     end
 
+    def self.file_type(file_path)
+      file_types = {
+        'jpg' => 'image/jpeg',
+        'jpeg' => 'image/jpeg',
+        'gif' => 'image/gif',
+        'png' => 'image/png',
+        'pdf' => 'image/pdf'
+      }
+      file_types[file_path.to_s]
+    end
   end
 end
 

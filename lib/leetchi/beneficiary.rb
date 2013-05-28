@@ -68,6 +68,5 @@ module Leetchi
     def self.update_strong_authentication(beneficiary_id, data)
         put_request(File.join('beneficiaries', beneficiary_id.to_s, 'strongAuthentication'), data)
     end
-
   end
 end

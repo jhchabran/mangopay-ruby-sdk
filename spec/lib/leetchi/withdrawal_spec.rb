@@ -1,15 +1,6 @@
 require_relative '../../spec_helper'
 
-describe Leetchi::Withdrawal do
-
-    include Capybara::DSL
-
-    before do
-        VCR.insert_cassette 'withdrawal', :record => :new_episodes
-    end
-    after do
-        VCR.eject_cassette
-    end
+describe Leetchi::Withdrawal, :type => :feature do
 
     let(:new_user) {
         user = Leetchi::User.create({
@@ -24,13 +15,16 @@ describe Leetchi::Withdrawal do
             'UserID' => user['ID'],
             'WalletID' => 0,
             'Amount' => 10000,
-            'ReturnURL' => 'https://leetchi.com',
-            'BankAccountBIC' => 'AGRIFRPP879'
+            'ReturnURL' => 'https://leetchi.com'
             })
         visit(contribution['PaymentURL'])
         fill_in('number', :with => '4970100000000154')
         fill_in('cvv', :with => '123')
         click_button('paybutton')
+        contribution = Leetchi::Contribution.details(contribution['ID'])
+        while contribution["IsSucceeded"] == false do
+            contribution = Leetchi::Contribution.details(contribution['ID'])
+        end
         user
     }
 
@@ -57,9 +51,9 @@ describe Leetchi::Withdrawal do
 
     describe "CREATE" do
         it "create a withdrawal" do
-            new_withdrawal['ID'].wont_be_nil
-            new_withdrawal['UserID'].must_equal new_user['ID']
-            new_withdrawal['BeneficiaryID'].must_equal new_beneficiary['ID']
+            expect(new_withdrawal['ID']).not_to be_nil
+            expect(new_withdrawal['UserID']).to eq(new_user['ID'])
+            expect(new_withdrawal['BeneficiaryID']).to eq(new_beneficiary['ID'])
         end
         it "fails and return a 2001 error code: Invalid withdrawal amount" do
             fail_withdrawal = Leetchi::Withdrawal.create({
@@ -69,7 +63,7 @@ describe Leetchi::Withdrawal do
                 'Amount' => -123,
                 'BeneficiaryID' => new_beneficiary['ID']
                 })
-            fail_withdrawal['ErrorCode'].must_equal 2001
+            expect(fail_withdrawal['ErrorCode']).to eq(2001)
         end
         it "fails and return a 2002 error code: Both parameters are specified: Amount and AmountWithoutFees" do
             fail_withdrawal = Leetchi::Withdrawal.create({
@@ -80,7 +74,7 @@ describe Leetchi::Withdrawal do
                 'AmountWithoutFees' => 2500,
                 'BeneficiaryID' => new_beneficiary['ID']
                 })
-            fail_withdrawal['ErrorCode'].must_equal 2002
+            expect(fail_withdrawal['ErrorCode']).to eq(2002)
         end
         it "fails and return a 2003 error code: Invalid withdrawal ClientFeeAmount" do
             fail_withdrawal = Leetchi::Withdrawal.create({
@@ -91,14 +85,14 @@ describe Leetchi::Withdrawal do
                 'BeneficiaryID' => new_beneficiary['ID'],
                 'ClientFeeAmount' => -3000
                 })
-            fail_withdrawal['ErrorCode'].must_equal 2003
+            expect(fail_withdrawal['ErrorCode']).to eq(2003)
         end
     end
 
     describe "GET" do
         it "get the withdrawal" do
             withdrawal = Leetchi::Withdrawal.details(new_withdrawal['ID'])
-            withdrawal['ID'].must_equal new_withdrawal['ID']
+            expect(withdrawal['ID']).to eq(new_withdrawal['ID'])
         end
     end
 end

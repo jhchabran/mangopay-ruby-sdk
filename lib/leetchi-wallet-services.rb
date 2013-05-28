@@ -4,6 +4,7 @@ module Leetchi
   require 'base64'
   require 'openssl'
   require 'net/http'
+  require 'net/http/post/multipart'
 
   require 'leetchi/ressource'
   require 'leetchi/user'
@@ -29,7 +30,6 @@ module Leetchi
     def base_url
       @base_url || (@preproduction == true  ? "https://api-preprod.leetchi.com" : "https://api.leetchi.com")
     end
-
   end
 
   class << self
@@ -40,5 +40,4 @@ module Leetchi
     self.configuration ||= Configuration.new
     yield configuration
   end
-
 end

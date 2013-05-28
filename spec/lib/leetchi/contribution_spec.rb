@@ -1,15 +1,6 @@
 require_relative '../../spec_helper'
 
-describe Leetchi::Contribution do
-
-    include Capybara::DSL
-
-    before do
-        VCR.insert_cassette 'contribution', :record => :new_episodes
-    end
-    after do
-        VCR.eject_cassette
-    end
+describe Leetchi::Contribution, :type => :feature do
 
     let(:new_user) {
         Leetchi::User.create({
@@ -27,13 +18,16 @@ describe Leetchi::Contribution do
             'UserID' => new_user['ID'],
             'WalletID' => 0,
             'Amount' => 10000,
-            'ReturnURL' => 'https://leetchi.com',
-            'BankAccountBIC' => 'AGRIFRPP879'
+            'ReturnURL' => 'https://leetchi.com'
             })
         visit(contribution['PaymentURL'])
         fill_in('number', :with => '4970100000000154')
         fill_in('cvv', :with => '123')
         click_button('paybutton')
+        contribution = Leetchi::Contribution.details(contribution['ID'])
+        while contribution["IsSucceeded"] == false do
+            contribution = Leetchi::Contribution.details(contribution['ID'])
+        end
         contribution
     end
 
@@ -47,25 +41,25 @@ describe Leetchi::Contribution do
 
     describe "CREATE" do
         it "creates a contribution" do
-            new_contribution['ID'].wont_be_nil
-            new_contribution['PaymentURL'].wont_be_nil
+            expect(new_contribution['ID']).not_to be_nil
+            expect(new_contribution['PaymentURL']).not_to be_nil
         end
     end
 
     describe "GET" do
         it "get the contribution" do
             contribution = Leetchi::Contribution.details(new_contribution['ID'])
-            contribution['ID'].must_equal new_contribution['ID']
+            expect(contribution['ID']).to eq(new_contribution['ID'])
         end
     end
 
     describe "REFUND" do
         it "creates a refund request for the contribution" do
-            new_contribution_refund['ID'].wont_be_nil
+            expect(new_contribution_refund['ID']).not_to be_nil
         end
         it "gets the refund request" do
             contribution_refund = Leetchi::Contribution.get_refund(new_contribution_refund['ID'])
-            contribution_refund['ID'].must_equal new_contribution_refund['ID']
+            expect(contribution_refund['ID']).to eq(new_contribution_refund['ID'])
         end
     end
 end

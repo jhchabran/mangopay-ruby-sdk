@@ -1,6 +1,6 @@
 module Leetchi
-   # In order to make an expense you need to get a list of expense sites and then redirect a user to ExpenseURL.
-   # When the user selects a product and pays, you will be notified about an expense through the notification mechanism.
+  # In order to make an expense you need to get a list of expense sites and then redirect a user to ExpenseURL.
+  # When the user selects a product and pays, you will be notified about an expense through the notification mechanism.
   class Expense < Leetchi::Ressource
 
     # Get an expense

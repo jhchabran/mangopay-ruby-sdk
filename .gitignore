@@ -1,3 +1,3 @@
 .DS_Store
-spec/fixtures/
 .yardoc
+spec/cassettes/*.yml

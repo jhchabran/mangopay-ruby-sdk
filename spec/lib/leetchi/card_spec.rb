@@ -1,8 +1,6 @@
 require_relative '../../spec_helper'
 
-describe Leetchi::Card do
-
-    include Capybara::DSL
+describe Leetchi::Card, :type => :feature do
 
     let(:new_user) {
         Leetchi::User.create({
@@ -24,34 +22,30 @@ describe Leetchi::Card do
         fill_in('number', :with => '4970100000000154')
         fill_in('cvv', :with => '123')
         click_button('paybutton')
-        page.driver.render('/Users/glorieux/Desktop/file.png')
+        card = Leetchi::Card.details(card['ID'])
+        while card["IsSucceeded"] == false do
+            card = Leetchi::Card.details(card['ID'])
+        end
         card
-    end
-
-    before do
-        VCR.insert_cassette 'card', :record => :new_episodes
-    end
-    after do
-        VCR.eject_cassette
     end
 
     describe "CREATE" do
         it "create a new card and return a redirect url" do
-            new_card['RedirectURL'].wont_be_empty
+            expect(new_card['RedirectURL']).not_to be_empty
         end
     end
 
     describe "GET" do
         it "get the users card" do
             card = Leetchi::Card.details(new_card["ID"])
-            card["ID"].must_equal new_card["ID"]
+            expect(card["ID"]).to eq(new_card["ID"])
         end
     end
 
     describe "DELETE" do
         it "delete the card" do
             deleted_card = Leetchi::Card.delete(new_card["ID"])
-            deleted_card.must_equal "\"OK\""
+            expect(deleted_card).to eq("\"OK\"")
         end
     end
 

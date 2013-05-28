@@ -1,15 +1,6 @@
 require_relative '../../spec_helper'
 
-describe Leetchi::Transfer do
-
-    include Capybara::DSL
-
-    before do
-        VCR.insert_cassette 'transfer', :record => :new_episodes
-    end
-    after do
-        VCR.eject_cassette
-    end
+describe Leetchi::Transfer, :type => :feature do
 
     let(:new_payer) {
         user = Leetchi::User.create({
@@ -31,6 +22,10 @@ describe Leetchi::Transfer do
         fill_in('number', :with => '4970100000000154')
         fill_in('cvv', :with => '123')
         click_button('paybutton')
+        contribution = Leetchi::Contribution.details(contribution['ID'])
+        while contribution["IsSucceeded"] == false do
+            contribution = Leetchi::Contribution.details(contribution['ID'])
+        end
         user
     }
 
@@ -70,24 +65,24 @@ describe Leetchi::Transfer do
 
     describe "CREATE" do
         it "create a transfer" do
-            new_transfert['ID'].wont_be_nil
+            expect(new_transfert['ID']).not_to be_nil
         end
     end
 
     describe "GET" do
         it "gets the transfer" do
             transfert = Leetchi::Transfer.details(new_transfert['ID'])
-            transfert['ID'].must_equal new_transfert['ID']
+            expect(transfert['ID']).to eq(new_transfert['ID'])
         end
     end
 
     describe "REFUND" do
         it "create a refund for the transfer" do
-            new_transfer_refund['ID'].wont_be_nil
+            expect(new_transfer_refund['ID']).not_to be_nil
         end
         it "gets a the transfer refund" do
             transfer_refund = Leetchi::Transfer.get_refund(new_transfer_refund['ID'])
-            transfer_refund['ID'].must_equal new_transfer_refund['ID']
+            expect(transfer_refund['ID']).to eq(new_transfer_refund['ID'])
         end
     end
 end
