@@ -49,7 +49,7 @@ describe Leetchi::RecurrentContribution do
         it "get a list of the recurrent contribution executions" do
             recurrent_contribution_executions = Leetchi::RecurrentContribution.get_executions(new_recurrent_contribution["ID"])
             expect(recurrent_contribution_executions).to be_a_kind_of(Array)
-            expect(recurrent_contribution_executions).not_to be_empty
+            expect(recurrent_contribution_executions).to be_empty
         end
     end
 end
