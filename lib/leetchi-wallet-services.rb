@@ -11,6 +11,7 @@ module Leetchi
   require 'leetchi/wallet'
   require 'leetchi/card'
   require 'leetchi/contribution'
+  require 'leetchi/withdrawal_contribution'
   require 'leetchi/transfer'
   require 'leetchi/beneficiary'
   require 'leetchi/withdrawal'
