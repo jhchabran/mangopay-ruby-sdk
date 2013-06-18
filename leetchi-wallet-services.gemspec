@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name        = 'leetchi-wallet-services'
-  s.version     = '1.1.0'
+  s.version     = '1.1.1'
   s.summary     = "Gem for interacting with the Leetchi Wallet Services"
   s.description = <<-EOF
   The Leetchi API Gem makes interacting with MangoPay Services much easier.
