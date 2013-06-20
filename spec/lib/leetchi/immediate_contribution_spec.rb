@@ -12,33 +12,31 @@ describe Leetchi::ImmediateContribution, :type => :feature do
             })
     }
 
-    let(:new_card) do
-        card = Leetchi::Card.create({
-            'Tag' => 'test-card',
-            'OwnerID' => new_user['ID'],
-            'ReturnURL' => 'http://leetchi.com'
+    let(:new_immediate_contribution) do
+        contribution = Leetchi::Contribution.create({
+            'Tag' => 'test_contribution',
+            'UserID' => new_user['ID'],
+            'WalletID' => 0,
+            'Amount' => 10000,
+            'ReturnURL' => 'https://leetchi.com',
+            'RegisterMeanOfPayment' => true
             })
-        visit(card['RedirectURL'])
+        visit(contribution['PaymentURL'])
         fill_in('number', :with => '4970100000000154')
         fill_in('cvv', :with => '123')
         click_button('paybutton')
-        card = Leetchi::Card.details(card['ID'])
-        while card["IsSucceeded"] == false do
-            card = Leetchi::Card.details(card['ID'])
+        contribution = Leetchi::Contribution.details(contribution['ID'])
+        while contribution["IsSucceeded"] == false do
+            contribution = Leetchi::Contribution.details(contribution['ID'])
         end
-        card
-    end
-    
-    let(:new_immediate_contribution) do
-        c = Leetchi::ImmediateContribution.create({
+        payment_card_id = contribution['PaymentCardID']
+        Leetchi::ImmediateContribution.create({
             'Tag' => 'test_contribution',
             'UserID' => new_user['ID'],
-            'PaymentCardID' => new_card['ID'],
+            'PaymentCardID' => payment_card_id,
             'WalletID' => 0,
             'Amount' => 33300
             })
-        puts c.inspect
-        c
     end
 
     let(:new_immediate_contribution_refund) {
