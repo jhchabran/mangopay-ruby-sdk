@@ -58,6 +58,7 @@ The gem implements the following resources:
 - Contribution  
 - Expense  
 - Operation  
+- Immediate Contribution
 - Recurrent Contribution (only available in preproduction)  
 - Strong Authentication  
 - Transfer  
