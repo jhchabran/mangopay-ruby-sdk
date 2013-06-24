@@ -23,9 +23,15 @@ describe Leetchi::StrongAuthentication do
       })
   }
 
-  let(:new_strong_authentication) {
+  let(:new_strong_beneficiary_authentication) {
     Leetchi::Beneficiary.create_strong_authentication(new_beneficiary['ID'], {
       'Tag' => 'test_beneficiary_strong_authentication'
+      })
+  }
+
+  let(:new_strong_user_authentication) {
+    Leetchi::User.create_strong_authentication(new_user['ID'], {
+      'Tag' => 'test_user_strong_authentication'
       })
   }
 
@@ -36,22 +42,41 @@ describe Leetchi::StrongAuthentication do
     end
   end
 
-  describe "UPLOAD" do
+  describe "UPLOAD BENEFICIARY" do
     it "uploads a PDF file to complete a beneficiary strong authentication request" do
-      document_upload = Leetchi::StrongAuthentication.upload(new_strong_authentication['UrlRequest'], 'spec/support-files/test_upload.pdf')
+      document_upload = Leetchi::StrongAuthentication.upload(new_strong_beneficiary_authentication['UrlRequest'], 'spec/support-files/test_upload.pdf')
       expect(document_upload).to be_true
     end
     it "uploads a JPG file to complete a beneficiary strong authentication request" do
-      document_upload = Leetchi::StrongAuthentication.upload(new_strong_authentication['UrlRequest'], 'spec/support-files/test_upload.jpg')
+      document_upload = Leetchi::StrongAuthentication.upload(new_strong_beneficiary_authentication['UrlRequest'], 'spec/support-files/test_upload.jpg')
       expect(document_upload).to be_true
     end
     it "uploads a PNG file to complete a beneficiary strong authentication request" do
-      document_upload = Leetchi::StrongAuthentication.upload(new_strong_authentication['UrlRequest'], 'spec/support-files/test_upload.png')
+      document_upload = Leetchi::StrongAuthentication.upload(new_strong_beneficiary_authentication['UrlRequest'], 'spec/support-files/test_upload.png')
       expect(document_upload).to be_true
     end
     it "uploads a GIF file to complete a beneficiary strong authentication request" do
-      document_upload = Leetchi::StrongAuthentication.upload(new_strong_authentication['UrlRequest'], 'spec/support-files/test_upload.gif')
+      document_upload = Leetchi::StrongAuthentication.upload(new_strong_beneficiary_authentication['UrlRequest'], 'spec/support-files/test_upload.gif')
       expect(document_upload).to be_true
     end
   end
+  
+  describe "UPLOAD USER" do
+    it "uploads a PDF file to complete a user strong authentication request" do
+      document_upload = Leetchi::StrongAuthentication.upload(new_strong_user_authentication['UrlRequest'], 'spec/support-files/test_upload.pdf')
+      expect(document_upload).to be_true
+    end
+    it "uploads a JPG file to complete a user strong authentication request" do
+      document_upload = Leetchi::StrongAuthentication.upload(new_strong_user_authentication['UrlRequest'], 'spec/support-files/test_upload.jpg')
+      expect(document_upload).to be_true
+    end
+    it "uploads a PNG file to complete a user strong authentication request" do
+      document_upload = Leetchi::StrongAuthentication.upload(new_strong_user_authentication['UrlRequest'], 'spec/support-files/test_upload.png')
+      expect(document_upload).to be_true
+    end
+    it "uploads a GIF file to complete a user strong authentication request" do
+      document_upload = Leetchi::StrongAuthentication.upload(new_strong_user_authentication['UrlRequest'], 'spec/support-files/test_upload.gif')
+      expect(document_upload).to be_true
+    end
+  end  
 end
