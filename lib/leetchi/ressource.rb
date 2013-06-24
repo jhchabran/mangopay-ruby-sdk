@@ -22,12 +22,12 @@ module Leetchi
     def self.form_request(upload_url, file_name, file_path)
       url = URI(upload_url)
       File.open(file_path) do |file|
-        req = Net::HTTP::Post::Multipart.new(url, :file => UploadIO.new(file_path, file_type(file_path)), :name => file_name)
+        req = Net::HTTP::Post::Multipart.new(url.request_uri, :file => UploadIO.new(file, file_type(file_path), file_name))
         res = Net::HTTP.start(url.host, url.port, :use_ssl => url.scheme == 'https') do |http|
           http.request(req)
         end
         res.code == "200" ? true : false
-      end
+      end      
     end
 
     private
@@ -89,7 +89,7 @@ module Leetchi
         'png' => 'image/png',
         'pdf' => 'image/pdf'
       }
-      file_types[file_path.to_s]
+      file_types[file_path.gsub(/^[^\.]+\./, "")]
     end
   end
 end

@@ -23,7 +23,7 @@ describe Leetchi::Card, :type => :feature do
         fill_in('cvv', :with => '123')
         click_button('paybutton')
         card = Leetchi::Card.details(card['ID'])
-        while card["IsSucceeded"] == false do
+        while (card["CardNumber"] || []).length != 16 do
             card = Leetchi::Card.details(card['ID'])
         end
         card
