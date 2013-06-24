@@ -12,28 +12,28 @@ describe Leetchi::ImmediateContribution, :type => :feature do
             })
     }
 
-    let(:new_immediate_contribution) do
-        contribution = Leetchi::Contribution.create({
-            'Tag' => 'test_contribution',
-            'UserID' => new_user['ID'],
-            'WalletID' => 0,
-            'Amount' => 10000,
-            'ReturnURL' => 'https://leetchi.com',
-            'RegisterMeanOfPayment' => true
+    let(:new_card) do
+        card = Leetchi::Card.create({
+            'Tag' => 'test-card',
+            'OwnerID' => new_user['ID'],
+            'ReturnURL' => 'http://leetchi.com'
             })
-        visit(contribution['PaymentURL'])
+        visit(card['RedirectURL'])
         fill_in('number', :with => '4970100000000154')
         fill_in('cvv', :with => '123')
         click_button('paybutton')
-        contribution = Leetchi::Contribution.details(contribution['ID'])
-        while contribution["IsSucceeded"] == false do
-            contribution = Leetchi::Contribution.details(contribution['ID'])
+        card = Leetchi::Card.details(card['ID'])
+        while (card["CardNumber"] || []).length != 16 do
+            card = Leetchi::Card.details(card['ID'])
         end
-        payment_card_id = contribution['PaymentCardID']
-        Leetchi::ImmediateContribution.create({
+        card
+    end
+    
+    let(:new_immediate_contribution) do
+        c = Leetchi::ImmediateContribution.create({
             'Tag' => 'test_contribution',
             'UserID' => new_user['ID'],
-            'PaymentCardID' => payment_card_id,
+            'PaymentCardID' => new_card['ID'],
             'WalletID' => 0,
             'Amount' => 33300
             })
@@ -52,7 +52,7 @@ describe Leetchi::ImmediateContribution, :type => :feature do
             expect(new_immediate_contribution['ID']).not_to be_nil
         end
     end
-
+    
     describe "GET" do
         it "get the immediate contribution" do
             immediate_contribution = Leetchi::ImmediateContribution.details(new_immediate_contribution['ID'])
@@ -69,4 +69,5 @@ describe Leetchi::ImmediateContribution, :type => :feature do
             expect(immediate_contribution_refund['ID']).to eq(new_immediate_contribution_refund['ID'])
         end
     end
+
 end
