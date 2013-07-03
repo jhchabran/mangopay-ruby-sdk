@@ -13,7 +13,7 @@ Tested on the following versions of Ruby: 1.9.2, 1.9.3, 2.0.0
 ## NEWS
 
 ### Version 2.0.0
-** BREAKING CHANGES **
+** BREAKING CHANGES **  
 The Gem has been updated to 2.0.0
 It has been renamed from leetchi-api-ruby-sdk to mangopay.
 
