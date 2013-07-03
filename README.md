@@ -6,9 +6,18 @@ See the [API documentation](http://www.mangopay.com/api-references/) for more de
 Tested on the following versions of Ruby: 1.9.2, 1.9.3, 2.0.0
 
 ## Code Status
-[![Build Status](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk.png?branch=master)](https://travis-ci.org/Leetchi/leetchi-api-ruby-sdk)
-[![Code Climate](https://codeclimate.com/github/Leetchi/leetchi-api-ruby-sdk.png)](https://codeclimate.com/github/Leetchi/leetchi-api-ruby-sdk)
-[![Dependency Status](https://gemnasium.com/Leetchi/leetchi-api-ruby-sdk.png)](https://gemnasium.com/Leetchi/leetchi-api-ruby-sdk)
+[![Build Status](https://travis-ci.org/MangoPay/mangopay.png?branch=master)](https://travis-ci.org/MangoPay/leetchi-api-ruby-sdk)
+[![Code Climate](https://codeclimate.com/github/MangoPay/mangopay.png)](https://codeclimate.com/github/MangoPay/leetchi-api-ruby-sdk)
+[![Dependency Status](https://gemnasium.com/MangoPay/mangopay.png)](https://gemnasium.com/MangoPay/leetchi-api-ruby-sdk)
+
+## NEWS
+
+### Version 2.0.0
+** BREAKING CHANGES **
+The Gem has been updated to 2.0.0
+It has been renamed from leetchi-api-ruby-sdk to mangopay.
+
+Please make sure you update all the internal calls from Leetchi to MangoPay.
 
 ## Requirements
 
@@ -26,15 +35,15 @@ Setup the following ENV:
 ENV['LEETCHI_API_BASE_URL'] = "https://api-preprod.leetchi.com" # once you've run your test using the preproduction environment use the production one
 ENV['LEETCHI_KEY_PATH'] = "abcd"                                # the full path to your leetchi key
 ENV['LEETCHI_PASSPHRASE'] = "efgh"                              # you key's passphrase (leave blank if none)
-ENV['LEETCHI_PARTNER_ID'] = "myID"                              # your Leetchi API ID
+ENV['LEETCHI_PARTNER_ID'] = "myID"                              # your MangoPay API ID
 ```
 
 ### Version 1.0.0
 
-You can now call the Leetchi.configure method like this:
+You can now call the MangoPay.configure method like this:
 
 ```ruby
-Leetchi.configure do |c|
+MangoPay.configure do |c|
     c.preproduction = true
     c.partner_id = 'example'
     c.key_path = './spec/support-files/example.pem'
@@ -52,29 +61,29 @@ This configure method can of course be use to define a Ruby on Rails initialiser
 
 ## Usage
 
-The gem implements the following resources:  
-- Beneficiary  
-- Card  
-- Contribution  
-- Expense  
-- Operation  
+The gem implements the following resources:
+- Beneficiary
+- Card
+- Contribution
+- Expense
+- Operation
 - Immediate Contribution
-- Recurrent Contribution (only available in preproduction)  
-- Strong Authentication  
-- Transfer  
-- User  
-- Wallet  
-- Withdrawal  
+- Recurrent Contribution (only available in preproduction)
+- Strong Authentication
+- Transfer
+- User
+- Wallet
+- Withdrawal
 
-Each resource has specifics methods such has `create`, `details`, `update`, etc. Those methods must be called with an ID and / or an Object matching the Leetchi API.
-Calling those methods return the Leetchi API response has an object. Every executions are made synchronously.
+Each resource has specifics methods such has `create`, `details`, `update`, etc. Those methods must be called with an ID and / or an Object matching the MangoPay API.
+Calling those methods return the MangoPay API response has an object. Every executions are made synchronously.
 
 ### Example
 
 This example creates a user and returns its informations:
 
 ```ruby
-Leetchi::User.create({
+MangoPay::User.create({
     'Tag' => 'test',
     'Email' => 'my@email.com',
     'FistName' => 'Jack',
@@ -86,15 +95,17 @@ Leetchi::User.create({
 This example returns a specific user's data:
 
 ```ruby
-Leetchi::User.details(123)
+MangoPay::User.details(123)
 ```
 
 ### Tests
-Make sure that you have run: ```bundle install```  
-Then you just have to run the rake task ```rake test``` to run all the test suite.  
-Feel free to report any test failure by creating an issue on the [Gem's Github](https://github.com/Leetchi/leetchi-api-ruby-sdk/issues)
+Make sure that you have run: ```bundle install```
+Then you just have to run the rake task ```rake test``` to run all the test suite.
+Feel free to report any test failure by creating an issue on the [Gem's Github](https://github.com/MangoPay/leetchi-api-ruby-sdk/issues)
 
 ## Contributing
+
+Take a look at the [CONTRIBUTING](https://github.com/Leetchi/mangopay/blob/master/CONTRIBUTING.md) file of this repo
 
 1. Fork the repo.
 

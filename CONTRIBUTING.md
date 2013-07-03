@@ -1,4 +1,4 @@
-# Contributing to Bankiwi
+# Contributing to MangoPay
 
 ## Bugs
 A bug is a _demonstrable problem_ that is caused by the code in the repository. Good bug reports are extremely helpful - thank you!
@@ -29,7 +29,7 @@ Example:
 > Screenshots of the bug. (especially if it's a visual one)
 >
 > Any other information you want to share that is relevant to the issue being reported. This might include the lines of code that you have identified as causing the bug, and potential solutions (and your opinions on their merits).
-**[File a bug report](https://github.com/leetchi/bankiwi/issues/)**
+**[File a bug report](https://github.com/leetchi/mangopay/issues/)**
 
 ## Pull requests
 Good pull requests - patches, improvements, new features - are a fantastic help. They should remain focused in scope and avoid containing unrelated commits. If your contribution involves a significant amount of work or substantial changes to any part of the project, please open an issue to discuss it first.
@@ -45,7 +45,7 @@ Please follow this process; it's the best way to get your work included in the p
 
 You can then make your first push to production. Enjoy :-)
 
-## Do Not 
+## Do Not
 Please **do not** use the issue tracker for personal support requests.
 
 Please **do not** derail or troll issues. Keep the discussion on topic and respect the opinions of others.
