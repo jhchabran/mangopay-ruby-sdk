@@ -6,7 +6,7 @@ See the [API documentation](http://www.mangopay.com/api-references/) for more de
 Tested on the following versions of Ruby: 1.9.2, 1.9.3, 2.0.0
 
 ## Code Status
-[![Build Status](https://travis-ci.org/MangoPay/mangopay.png?branch=master)](https://travis-ci.org/MangoPay/leetchi-api-ruby-sdk)
+[![Build Status](https://travis-ci.org/Leetchi/mangopay.png?branch=master)](https://travis-ci.org/Leetchi/mangopay)
 [![Code Climate](https://codeclimate.com/github/MangoPay/mangopay.png)](https://codeclimate.com/github/MangoPay/leetchi-api-ruby-sdk)
 [![Dependency Status](https://gemnasium.com/MangoPay/mangopay.png)](https://gemnasium.com/MangoPay/leetchi-api-ruby-sdk)
 
