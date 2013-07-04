@@ -1,4 +1,4 @@
-# mangopay
+# MangoPay Ruby SDK
 
 The gem for interacting with MangoPay API.
 See the [API documentation](http://www.mangopay.com/api-references/) for more details on the API.
@@ -7,7 +7,7 @@ Tested on the following versions of Ruby: 1.9.2, 1.9.3, 2.0.0
 
 ## Code Status
 [![Build Status](https://travis-ci.org/Leetchi/mangopay.png?branch=master)](https://travis-ci.org/Leetchi/mangopay)
-[![Code Climate](https://codeclimate.com/github/Leetchi/mangopay.png)](https://codeclimate.com/github/Leetchi/mangopay)
+[![Code Climate](https://codeclimate.com/github/MangoPay/mangopay-ruby-sdk.png)](https://codeclimate.com/github/MangoPay/mangopay-ruby-sdk)
 [![Dependency Status](https://gemnasium.com/Leetchi/mangopay.png)](https://gemnasium.com/Leetchi/mangopay)
 
 ## NEWS
