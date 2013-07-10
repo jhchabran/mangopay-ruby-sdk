@@ -8,12 +8,12 @@ Tested on the following versions of Ruby: 1.9.2, 1.9.3, 2.0.0
 ## Code Status
 [![Build Status](https://travis-ci.org/Leetchi/mangopay.png?branch=master)](https://travis-ci.org/Leetchi/mangopay)
 [![Code Climate](https://codeclimate.com/github/MangoPay/mangopay-ruby-sdk.png)](https://codeclimate.com/github/MangoPay/mangopay-ruby-sdk)
-[![Dependency Status](https://gemnasium.com/Leetchi/mangopay.png)](https://gemnasium.com/Leetchi/mangopay)
+[![Dependency Status](https://gemnasium.com/MangoPay/mangopay-ruby-sdk.png)](https://gemnasium.com/MangoPay/mangopay-ruby-sdk)
 
 ## NEWS
 
 ### Version 2.0.0
-** BREAKING CHANGES **  
+** BREAKING CHANGES **
 The Gem has been updated to 2.0.0
 It has been renamed from leetchi-api-ruby-sdk to mangopay.
 
