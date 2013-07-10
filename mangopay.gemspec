@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   For any questions regarding the use of MangoPay's Wallet Services feel free to contact us at http://www.mangopay.com/contact-us/
   You can find more documentation about MangoPay Services at http://www.mangopay.com/
   EOF
-  s.authors     = ['Geoffroy Lorieux', 'Vincent Cogne', 'Eric Larch']
+  s.authors     = ['Geoffroy Lorieux', 'Vincent Cogne', 'Eric Larcheveque']
   s.email       = 'it-support@mangopay.com'
   s.files       = FileList['lib/**/*.rb',
                            '[A-Z]*',
