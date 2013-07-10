@@ -20,7 +20,7 @@ module MangoPay
   require 'mangopay/operation'
   require 'mangopay/expense'
   require 'mangopay/recurrent_contribution'
-  require 'mangopay/amazon_voucher'
+
 
   class Configuration
     attr_accessor :base_url, :partner_id, :key_path, :key_password, :preproduction

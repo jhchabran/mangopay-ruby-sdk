@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name        = 'mangopay'
-  s.version     = '2.1.0'
+  s.version     = '2.0.0'
   s.summary     = "Gem for interacting with the Mango Pay API"
   s.description = <<-EOF
   The mangopay Gem makes interacting with MangoPay Services much easier.
