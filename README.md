@@ -5,6 +5,8 @@ See the [API documentation](http://www.mangopay.com/api-references/) for more de
 
 Tested on the following versions of Ruby: 1.9.2, 1.9.3, 2.0.0
 
+This repository is outdated, please visit [mangopay2-ruby-sdk](https://github.com/MangoPay/mangopay2-ruby-sdk).
+
 ## Code Status
 [![Build Status](https://travis-ci.org/Leetchi/mangopay.png?branch=master)](https://travis-ci.org/Leetchi/mangopay)
 [![Code Climate](https://codeclimate.com/github/MangoPay/mangopay-ruby-sdk.png)](https://codeclimate.com/github/MangoPay/mangopay-ruby-sdk)
